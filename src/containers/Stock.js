@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Plot from 'react-plotly.js';
 class Stock extends Component {
     // APIKEY = {process.env.REACT_APP_ALPHAVANTAGE_API_KEY}
 
@@ -48,9 +47,9 @@ render() {
 
 
 return (
-    <div >
+    <div className = "card">
         <h1 > Stock Market </h1>
-        <Plot
+        {/* <Plot
         data={[
             {
               x: this.state.stockChartXValues,
@@ -61,7 +60,12 @@ return (
             }
           ]}
           layout={{width: 720, height: 440, title: 'A Fancy Plot'}}
-        />
+        /> */}
+
+        <p>{this.state.stockChartYValues}</p>
+        <p>{this.state.stockChartXValues}</p>
+
+
       </div>
         )
     }
