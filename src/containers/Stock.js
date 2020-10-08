@@ -49,8 +49,6 @@ render() {
 return (
     <div className = "card">
         <h1 > Stock Market </h1>
-        <p>{this.state.stockChartYValues}</p>
-        <p>{this.state.stockChartXValues}</p>
     </div>
         )
     }
