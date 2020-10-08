@@ -15,6 +15,7 @@ class App extends React.Component {
       .then((response) => response.json())
       .then(articles => this.setState({articles : articles.articles}))
   
+      
 }
 
 render(){
