@@ -7,7 +7,8 @@ class Signup extends React.Component {
     newUser: {
       first_name: "",
       last_name: "",
-      imgURL: "",
+      username: "",
+      imageUrl: "",
       password: "",
       password_confirmation: "",
     },
@@ -25,20 +26,23 @@ class Signup extends React.Component {
     e.preventDefault();
     console.log("submit");
     let newUser = this.state.newUser;
-    api.auth.signup(newUser).then((response) => {
-      if (response.error) {
-        alert(response.error);
-        this.setState({ error: true });
-      } else {
-        this.props.handleLogin(response);
-        this.props.history.push("/");
-      }
-    });
+    api.auth.signup(newUser).then(console.log)
+
+    
+    // api.auth.signup(newUser).then((response) => {
+    //   if (response.error) {
+    //     alert(response.error);
+    //     this.setState({ error: true });
+    //   } else {
+    //     this.props.handleLogin(response);
+    //     this.props.history.push("/");
+    //   }
+    // });
   };
 
   render() {
     return (
-      <div className="form-container">
+      <div className="profile-form-row-center">
         <form
           onChange={(e) => this.handleOnChange(e)}
           onSubmit={(e) => this.handleSubmit(e)}
@@ -59,9 +63,15 @@ class Signup extends React.Component {
               />
               <input
                 type="text"
-                name="imgURL"
+                name="username"
+                placeholder="username"
+                value={this.state.username}
+              />
+              <input
+                type="text"
+                name="imageURL"
                 placeholder="Image URL"
-                value={this.state.imgURL}
+                value={this.state.imageUrl}
               />
               <input
                 type="password"

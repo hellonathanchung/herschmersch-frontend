@@ -1,4 +1,4 @@
-const API_ROOT = `https://localhost:3000/api/v1`;
+const API_ROOT = `http://localhost:3000/api/v1/`;
 
 const headers = {
   "Content-Type": "application/json",
@@ -7,15 +7,33 @@ const headers = {
 };
 
 const login = (username, password) => {
-  return fetch(`${API_ROOT}/login`, {
+  return fetch(`${API_ROOT}login`, {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ username, password }),
   }).then((res) => res.json());
 };
 
+const signup = (newUser) => {
+  
+debugger
+  return fetch(`${API_ROOT}users`, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify({ user: newUser }),
+  }).then((res) => res.json());
+};
+
+const getCurrentUser = () => {
+  return fetch(`${API_ROOT}current_user`, {
+    headers: headers,
+  }).then((res) => res.json());
+};
+
 export default {
   auth: {
-    login:login
+    login:login,
+    getCurrentUser: getCurrentUser,
+    signup: signup,
   }
 }

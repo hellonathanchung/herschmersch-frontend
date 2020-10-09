@@ -21,6 +21,10 @@ handleLogin = (e) => {
 }
 
 
+handleSignUp = (e) => {
+  console.log('login')
+}
+
 //   componentDidMount(){
 //   //   let NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY
 //   // const url = `http://newsapi.org/v2/everything?q=stocks&from=2020-09-07&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`;
