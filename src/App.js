@@ -4,8 +4,10 @@ import './App.css';
 // containers
 import PostContainer from './containers/PostContainer'
 import Portfolio from './containers/Portfolio'
+
 //components
-import Stock from './containers/Stock'
+import Signup from './components/Signup'
+import StockContainer from './containers/StockContainer'
 import Header from "./components/Header";
 import Login from "./containers/Login";
 import { BrowserRouter as Router, Link, NavLink, Route, Switch } from "react-router-dom";
@@ -18,7 +20,6 @@ handleLogin = (e) => {
   console.log('login')
 }
 
-// renderLoginPage = () => {<Login handleLoginOrSignup={this.handleLogin} />}
 
 //   componentDidMount(){
 //   //   let NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY
@@ -42,8 +43,11 @@ render() {
       <Route path="/login"> 
         <Login/>
       </Route>
+      <Route path="/signup"> 
+        <Signup/>
+      </Route>
       <Route path="/stocks"> 
-        <Stock />
+        <StockContainer />
       </Route>
       <Route path="/Portfolio"> 
         <Portfolio/>
