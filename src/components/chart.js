@@ -1,3 +1,5 @@
+import React from "react";
+
 import { createChart } from 'lightweight-charts';
  
 const chart = createChart(document.body, { width: 400, height: 300 });
@@ -14,3 +16,4 @@ lineSeries.setData([
     { time: '2019-04-19', value: 81.89 },
     { time: '2019-04-20', value: 74.43 },
 ]);
+

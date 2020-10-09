@@ -1,9 +1,12 @@
 import React from 'react';
-import Header from "./components/Header";
-
 import './App.css';
-import Stock from './containers/Stock'
+
+// containers
 import PostContainer from './containers/PostContainer'
+import Portfolio from './containers/Portfolio'
+//components
+import Stock from './containers/Stock'
+import Header from "./components/Header";
 import Login from "./containers/Login";
 import { BrowserRouter as Router, Link, NavLink, Route, Switch } from "react-router-dom";
 
@@ -34,15 +37,18 @@ render() {
           handleLogout={this.handleLogout}
           handleSearch={this.handleSearch}
         />
-      <Switch path="/login"> 
+        <Switch>
+
+      <Route path="/login"> 
         <Login/>
-      </Switch>
-        <Switch path="/stocks"> 
-       <Stock />
-      </Switch>
-      {/* <PostContainer/>*/}
-    
-      {/* <News articles={this.state.articles} /> */}
+      </Route>
+      <Route path="/stocks"> 
+        <Stock />
+      </Route>
+      <Route path="/Portfolio"> 
+        <Portfolio/>
+      </Route>
+        </Switch>
       </Router>
     </div>
   );

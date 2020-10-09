@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { createChart } from 'lightweight-charts';
+
 class Stock extends Component {
 
     state = {
@@ -12,8 +13,6 @@ class Stock extends Component {
     componentDidMount() {
         this.fetchStock()
     }
-
-    
 
     fetchStock() {
         let API_KEY = process.env.REACT_APP_ALPHAVANTAGE_API_KEY
@@ -50,7 +49,7 @@ render() {
 
 return (
     <div className = "card">
-        <h1 > Stock Market Hey </h1>
+        <h1 > Stock Market</h1>
     </div>
         )
     }
