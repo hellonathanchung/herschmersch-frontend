@@ -129,7 +129,7 @@
   font-weight: bolder;
 }
 .service-specs .request-button {
-  background: #1a436b;
+  background: #5497da;
   color: white;
   border-radius: 5px;
   font-size: 20px;
@@ -177,7 +177,7 @@
   height: max-content;
   display: inline-grid;
   margin: 1rem 2rem;
-  color: #1a436b;
+  color: #5497da;
 }
 
 .card .service_img {
@@ -267,11 +267,11 @@
   display: flex;
   width: 75%;
   margin: 0 auto;
-  background: #1a436b;
+  background: #5497da;
   padding: 10px;
 }
 .register-form {
-  background: #1a436b;
+  background: #5497da;
   width: 75%;
   margin: 0 auto;
   border-radius: 10px;
@@ -322,7 +322,7 @@
   width: auto;
   color: white;
   margin: 0 auto;
-  background: #1a436b;
+  background: #5497da;
   width: 50%;
   padding: 16px;
   /* display: block; */
@@ -365,7 +365,7 @@
   width: 90%;
   margin-bottom: 20px;
   padding: 12px;
-  border: 1px solid #1a436b;
+  border: 1px solid #5497da;
   border-radius: 15px;
 }
 
@@ -391,7 +391,7 @@ label {
   padding: 15px;
 }
 .btn {
-  background: #1a436b;
+  background: #5497da;
   color: white;
   border-radius: 5px;
   font-size: 20px;
@@ -404,7 +404,7 @@ label {
   background-color: white;
 }
 .submit-button .btn:hover {
-  background: #1A436B;
+  background: #5497da;
   color: white;
 } */
 
