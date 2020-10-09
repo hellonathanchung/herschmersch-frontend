@@ -77,17 +77,17 @@
   text-align: center;
   align-content: center;
 }
-.login-form button {
+.login-form {
+  position: center;
   float: right;
   padding: 6px 10px;
   margin-top: 1px;
   margin-right: 16px;
-  background: #ddd;
+  background: rgb(255, 255, 255);
   font-size: 17px;
   border: none;
   cursor: pointer;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: px;
 }
 
 #service-collection {
@@ -291,7 +291,7 @@
   font-size: 17px;
   border: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .row .delete-profile-button {
@@ -301,7 +301,7 @@
   font-size: 17px;
   border: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .profile-page-image {
@@ -334,22 +334,24 @@
   font-size: 20;
   color: white;
   position: left;
+  
 }
 
 .profile-form-row-center {
   margin: 0 auto;
-  background: #1a436b;
+  background: #4285F4;
   width: 50%;
   padding: 16px;
   display: block;
   position: relative;
   color: white;
+  border-radius: 20px;
 }
 
 .one-column-grid button {
-  background: #1a436b;
+  background: #4285F4;
   color: white;
-  border-radius: 5px;
+  border-radius: 20px;
   font-size: 20px;
   border: none;
   padding: 12px;
@@ -364,7 +366,7 @@
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid #1a436b;
-  border-radius: 3px;
+  border-radius: 15px;
 }
 
 .profile-form-row input[type="text"],
@@ -431,17 +433,9 @@ label {
   }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
 * {
-  font-family: "Poppins";
+  font-family: "Helvetica";
   text-align: center;
   outline: none;
 }

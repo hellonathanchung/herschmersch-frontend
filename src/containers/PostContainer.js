@@ -1,6 +1,6 @@
 import React from 'react';
-import {}
-import {connect} from 'react-redux'
+// import {}
+// import {connect} from 'react-redux'
 
 const PostContainer = (props) => {
 console.log(props)
@@ -23,4 +23,5 @@ const mapDispatchToProps = (dispatch) => {
     addLike: (id) => dispatch(id)
   }
 }
-export default connect (mapStateToProps)(PostContainer)
+// export default connect (mapStateToProps)(PostContainer)
+export default PostContainer
