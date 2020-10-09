@@ -1,9 +1,12 @@
 import React from 'react';
+import Header from "./components/Header";
+
 import './App.css';
 import Stock from './containers/Stock'
 import PostContainer from './containers/PostContainer'
 import Login from "./containers/Login";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link, NavLink, Route, Switch } from "react-router-dom";
+
 
 // import News from './components/News'
 class App extends React.Component {
@@ -26,11 +29,21 @@ render() {
 
   return (
     <div className="App">
-      <h1>HerschMersch</h1>
-      <Login/>
-      {/* <PostContainer/>
-      <Stock /> */}
+      <Router>
+        <Header
+          handleLogout={this.handleLogout}
+          handleSearch={this.handleSearch}
+        />
+      <Switch path="/login"> 
+        <Login/>
+      </Switch>
+        <Switch path="/stocks"> 
+       <Stock />
+      </Switch>
+      {/* <PostContainer/>*/}
+    
       {/* <News articles={this.state.articles} /> */}
+      </Router>
     </div>
   );
 }

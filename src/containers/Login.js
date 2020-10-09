@@ -1,5 +1,5 @@
 import React from 'react';
-import api from ".../services/api";
+import api from '../services/api'
 
 //handle forms with state
 
@@ -16,19 +16,21 @@ class Login extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+
+
   handleLoginSubmit = (event) => {
-    debugger
     event.preventDefault();
+    debugger
+    console.log("logging in..")
     const username = this.state.username;
     const password = this.state.password;
-
-    // api.auth.login(username, password)
+    api.auth.login(username, password)
   };
 
 render() {
   return (
     <div className="one-column-grid">
-    <form onSubmit = {(event) => this.handleLoginSubmit()}>
+    <form onSubmit = {(event) => this.handleLoginSubmit(event)}>
       <h2>Please log in below:</h2>
       <div className="profile-form-row-center">
         <label name="username">username</label>
