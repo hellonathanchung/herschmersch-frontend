@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import 'fomantic-ui-css/semantic.css';
+
 
 // containers
 import PostContainer from './containers/PostContainer'
@@ -23,6 +25,7 @@ class App extends React.Component {
 //   //     .then((response) => response.json())
 //   //     .then(articles => this.setState({articles : articles.articles}))
 // }
+
 
 render() {
 

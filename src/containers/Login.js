@@ -49,11 +49,13 @@ class Login extends React.Component {
 render() {
   return (
     
-    <div className="one-column-grid">
-    <form onSubmit = {(event) => this.handleLoginSubmit(event)}>
+    <div className="ui one column stackable center aligned page grid" >
+         <div class="column twelve wide">
+
+    <form className = "ui form" onSubmit = {(event) => this.handleLoginSubmit(event)}>
       <h2>Please log in below:</h2>
-      <div className="profile-form-row-center">
-        <label name="username">username</label>
+      <div className="field">
+        <label name="username">Username</label>
         <input 
           onChange={(e) => this.handleLoginChange(e)}
           type="text"
@@ -61,7 +63,10 @@ render() {
           value={this.state.username}
           placeholder="username"
         ></input>
-        <label name="password">Password</label>
+        </div>
+        <div className="field">
+
+        <label name="Password">Password</label>
         <input
           onChange={(e) => this.handleLoginChange(e)}
           type="password"
@@ -74,7 +79,7 @@ render() {
 
 
       <br></br>
-      <button >Submit</button>
+      <button className="ui-button">Submit</button>
     </form>
     <div>
       <br></br>
@@ -91,6 +96,7 @@ render() {
           Nathan
         </b>
       </p>
+      </div>
     </div>
   </div>
 );

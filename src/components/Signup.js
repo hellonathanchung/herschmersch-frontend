@@ -42,13 +42,15 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="profile-form-row-center">
-        <form
+      
+      <div className="service-container" >
+        
+        <form className="ui form"
           onChange={(e) => this.handleOnChange(e)}
           onSubmit={(e) => this.handleSubmit(e)}
         >
-          <div className="register-form">
-            <div className="profile-form-row">
+          <div>
+            <div className="field" >
               <input
                 type="text"
                 name="first_name"
@@ -64,7 +66,7 @@ class Signup extends React.Component {
               <input
                 type="text"
                 name="username"
-                placeholder="username"
+                placeholder="Username"
                 value={this.state.username}
               />
               <input
