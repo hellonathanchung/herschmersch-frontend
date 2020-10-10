@@ -20,15 +20,35 @@ class Login extends React.Component {
 
   handleLoginSubmit = (event) => {
     event.preventDefault();
-    debugger
-    console.log("logging in..")
+    
     const username = this.state.username;
     const password = this.state.password;
+    
     api.auth.login(username, password)
+    .then(response => {
+      if (!response.error) {
+        this.setState({user: {
+          id:response.id,
+          username: response.username,
+        posts:response.posts,
+        list_stocks:response.list_stocks,
+        imageUrl:response.imageUrl}}
+        )
+        // this.props.handleLogin(response);
+        this.props.history.push("/portfolio");
+        
+
+      }else{
+
+        alert(response.error)
+      }
+    })
+
   };
 
 render() {
   return (
+    
     <div className="one-column-grid">
     <form onSubmit = {(event) => this.handleLoginSubmit(event)}>
       <h2>Please log in below:</h2>

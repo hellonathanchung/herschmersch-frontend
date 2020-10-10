@@ -15,8 +15,6 @@ const login = (username, password) => {
 };
 
 const signup = (newUser) => {
-  
-debugger
   return fetch(`${API_ROOT}users`, {
     method: "POST",
     headers: headers,
