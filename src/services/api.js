@@ -28,10 +28,25 @@ const getCurrentUser = () => {
   }).then((res) => res.json());
 };
 
+
+const newPost = (newPost) => {
+  
+  fetch('http://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+      'content-type':'application/json'
+    },
+    body: JSON.stringify(newPost)
+  }).then((res) => res.json())
+.then(data => console.log(data))}
+
 export default {
   auth: {
     login:login,
     getCurrentUser: getCurrentUser,
     signup: signup,
+  },
+  post:{
+    newPost:newPost
   }
 }
