@@ -28,7 +28,6 @@ class Signup extends React.Component {
     let newUser = this.state.newUser;
     api.auth.signup(newUser).then(console.log)
 
-    
     // api.auth.signup(newUser).then((response) => {
     //   if (response.error) {
     //     alert(response.error);

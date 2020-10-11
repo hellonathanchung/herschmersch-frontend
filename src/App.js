@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'fomantic-ui-css/semantic.css';
+import api from './services/api'
 
 
 // containers
@@ -8,16 +9,22 @@ import PostContainer from './containers/PostContainer'
 import Portfolio from './containers/Portfolio'
 
 //components
-import Signup from './components/Signup'
+import SignupForm from './components/SignupForm'
 import StockContainer from './containers/StockContainer'
 import Header from "./components/Header";
 import Login from "./containers/Login";
+import PostForm from  "./components/PostForm"
 import { BrowserRouter as Router, Link, NavLink, Route, Switch, withRouter } from "react-router-dom";
+
+
 
 
 // import News from './components/News'
 class App extends React.Component {
-
+ state = {
+  
+  }
+  
 //   componentDidMount(){
 //   //   let NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY
 //   // const url = `http://newsapi.org/v2/everything?q=stocks&from=2020-09-07&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`;
@@ -26,15 +33,57 @@ class App extends React.Component {
 //   //     .then(articles => this.setState({articles : articles.articles}))
 // }
 
+handleLoginSubmit = (event, userCredentials) => {
+  debugger
+  
+  event.preventDefault();
+  
+  const username = userCredentials.username;
+  const password = userCredentials.password;
+  
+  api.auth.login(username, password)
+  .then(response => {
+    if (!response.error) {
+      this.setState({user: {
+        id:response.user.id,
+        username: response.user.username,
+      posts:response.user.posts,
+      list_stocks:response.user.list_stocks,
+      imageUrl:response.user.imageUrl}}
+      )
+      // this.props.handleLogin(response);
+      this.props.history.push("/portfolio");
+      
+    }else{
+
+      alert(response.error)
+    }
+  })
+
+};
 
 render() {
-
   return (
     <div className="App">
     <Header handleLogout={this.handleLogout} handleSearch={this.handleSearch}/>
     <Switch>
-      <Route path="/login" component={Login}/> 
-      <Route path="/signup" component={Signup}/> 
+      <Route 
+      path="/login"
+      render={(routerProps) => {
+            return <Login {...routerProps} handleLoginSubmit={this.handleLoginSubmit} handleLoginChange={this.props.handleLoginChange} />;
+          }}
+        /> 
+      <Route path="/signup" component={SignupForm}/>
+       
+      <Route path="/posts/new" render={(routerProps) => {
+            return <PostForm {...routerProps} />;
+          }}
+        /> 
+
+<Route path="/posts/" render={(routerProps) => {
+            return <PostContainer {...routerProps} />;
+          }}
+        /> 
       <Route path="/stocks" component={StockContainer}/> 
       <Route path="/Portfolio" component={Portfolio}/> 
     </Switch>

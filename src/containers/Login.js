@@ -16,43 +16,15 @@ class Login extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-
-
-  handleLoginSubmit = (event) => {
-    event.preventDefault();
-    
-    const username = this.state.username;
-    const password = this.state.password;
-    
-    api.auth.login(username, password)
-    .then(response => {
-      if (!response.error) {
-        this.setState({user: {
-          id:response.id,
-          username: response.username,
-        posts:response.posts,
-        list_stocks:response.list_stocks,
-        imageUrl:response.imageUrl}}
-        )
-        // this.props.handleLogin(response);
-        this.props.history.push("/portfolio");
-        
-
-      }else{
-
-        alert(response.error)
-      }
-    })
-
-  };
-
 render() {
+  console.log(this.state)
+  let userCrendentials=this.state
   return (
     
     <div className="ui one column stackable center aligned page grid" >
-         <div class="column twelve wide">
+         <div className="column twelve wide">
 
-    <form className = "ui form" onSubmit = {(event) => this.handleLoginSubmit(event)}>
+    <form className = "ui form" onSubmit = {(event) => this.props.handleLoginSubmit(event, userCrendentials)}>
       <h2>Please log in below:</h2>
       <div className="field">
         <label name="username">Username</label>

@@ -18,6 +18,12 @@ const Navbar = (props) => {
           <Link to="/portfolio" className="navbar-list">
             Portfolio
           </Link>{" "}
+          <Link to="/posts/new" className="navbar-list">
+            New Post
+          </Link>{" "}
+          <Link to="/posts/" className="navbar-list">
+            All Posts
+          </Link>{" "}
         </div>
       ) : (
         <div className="navbar-list">
