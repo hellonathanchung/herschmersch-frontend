@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import PostForm from  "../components/PostForm"
+import PostForm from  "../components/PostForm"
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions/postActions'
 
@@ -7,20 +7,21 @@ import { fetchPosts } from '../actions/postActions'
 class PostContainer extends Component {
 
   componentDidMount() {
-    console.log("hello")
   this.props.fetchPosts()
   }
   
   render () {
+    // debugger
     const postItems = this.props.posts.map(post => 
       <div className="ui raised very padded text container segment" key={post.id}>
         <h2 className="ui header">{post.title}</h2>
-        <p>{post.body}</p>
+        <h4 className="ui header"> {post.user.full_name}</h4>
+        <p>{post.content}</p>
       </div>)
 
     return(
       <div>
-       {/* <PostForm/> */}
+       <PostForm/>
       {postItems}
     </div>
   )

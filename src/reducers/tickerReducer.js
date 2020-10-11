@@ -1,4 +1,4 @@
-import {FETCH_POSTS, NEW_POST} from '../actions/types'
+import {FETCH_TICKERS, ADD_LIST_STOCK} from '../actions/types'
 
 const initialState = {
   //represents items coming in from action.
@@ -9,13 +9,13 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch(action.type) {
-    case FETCH_POSTS:
+    case FETCH_TICKERS:
       console.log('reducer')
       return {
         ...state,
         items: action.payload
       }
-      case NEW_POST:
+      case ADD_LIST_STOCK:
       return {
         ...state,
         item: action.payload

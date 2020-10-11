@@ -1,5 +1,8 @@
 import React from 'react';
 import api from '../services/api'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { createPost } from '../actions/postActions'
 
 
 class PostForm extends React.Component{
@@ -14,17 +17,18 @@ class PostForm extends React.Component{
   };
 
   handleSubmit = (event) => {
+    console.log('post submit pressed')
     event.preventDefault();
-    const newPost = {
+    const newPostData = {
       title: this.state.title,
-      body:this.state.content
+      content:this.state.content,
+      user_id: 23
+      
     }
-
-    api.post.newPost(newPost)
-  }
+// this is where we need to add redux
+this.props.createPost(newPostData)  }
   render () {
 
-    
     return (
     <div className="ui one column stackable center aligned page grid">
       <form className="column twelve wide"
@@ -47,4 +51,7 @@ class PostForm extends React.Component{
   }
 }
 
-export default PostForm
+PostForm.propTypes = {
+  createPost: PropTypes.func.isRequired
+}
+export default connect(null, {createPost})(PostForm)
