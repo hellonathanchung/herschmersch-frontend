@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import 'fomantic-ui-css/semantic.css';
 import api from './services/api'
+import StockChart from './components/StockChart'
+
+
 
 
 // containers
@@ -18,26 +21,22 @@ import { BrowserRouter as Router, Link, NavLink, Route, Switch, withRouter } fro
 
 
 
-
 // import News from './components/News'
 class App extends React.Component {
  state = {
    user:{},
-  
+
   }
 
   componentDidMount() {
-    this.props.history.push("/login ");
-
     if(localStorage.token){
-      fetch('http://localhost:3000/persist',{
+      fetch('http://localhost:3000/api/v1/persist',{
         headers:{
           "Authorization": `Bearer ${localStorage.token}`
         }
       })
       .then(response => response.json()
       .then(json => this.handleAuthResponse(json)))
-
     }
 
   }
@@ -109,6 +108,7 @@ render() {
   console.log(this.state)
   return (
     <div className="App">
+      
     <Header handleLogout={this.handleLogout} handleSearch={this.handleSearch}/>
     <Switch>
       <Route 
@@ -133,7 +133,7 @@ render() {
           }}
         /> 
       <Route path="/stocks" component={StockContainer}/> 
-      <Route path="/Portfolio" component={Portfolio}/>
+      <Route path="/portfolio" component={Portfolio}/>
     </Switch>
     </div>
   );
