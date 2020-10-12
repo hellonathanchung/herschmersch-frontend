@@ -22,7 +22,7 @@ render() {
   return (
     
     <div className="ui one column stackable center aligned page grid" >
-         <div className="column twelve wide">
+    <div className="column twelve wide">
 
     <form className = "ui form" onSubmit = {(event) => this.props.handleLoginSubmit(event, userCrendentials)}>
       <h2>Please log in below:</h2>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PostForm from  "../components/PostForm"
+// import PostForm from  "../components/PostForm"
 import { connect } from 'react-redux'
 import { fetchPosts } from '../actions/postActions'
 
@@ -21,7 +21,7 @@ class PostContainer extends Component {
 
     return(
       <div>
-       <PostForm/>
+       {/* <PostForm/> */}
       {postItems}
     </div>
   )

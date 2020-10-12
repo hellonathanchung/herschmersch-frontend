@@ -27,30 +27,22 @@ const Navbar = (props) => {
         </div>
       ) : (
         <div className="navbar-list">
-          <Link to="/" className="navbar-list">
-            Home{" "}
-          </Link>
-          <Link to="/stock" className="navbar-list">
-            New Service{" "}
-          </Link>
-          <div className="search-container">
-            <input
-              type="text"
-              onChange={props.handleSearch}
-              placeholder="Search"
-            />
-          </div>
-          <Link to="/profile" className="navbar-list">
-            Profile{" "}
-          </Link>
-          <Link to="/portfolio" className="navbar-list">
-            My Requests{" "}
-          </Link>
-          <Link to="/" className="navbar-list" onClick={props.handleLogout}>
-            {" "}
-            Logout{" "}
-          </Link>
-        </div>
+        <Link to="/stocks" className="navbar-list">
+          Stocks
+        </Link>{" "}
+        <Link to="/portfolio" className="navbar-list">
+          Portfolio
+        </Link>{" "}
+        <Link to="/posts/new" className="navbar-list">
+          New Post
+        </Link>{" "}
+        <Link to="/posts/" className="navbar-list">
+          All Posts
+        </Link>{" "}
+        <Link to="/logout/" className="navbar-list">
+          Logout
+        </Link>{" "}
+      </div>
       )}
     </div>
   );
