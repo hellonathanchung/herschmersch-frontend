@@ -29,7 +29,7 @@ class PostContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-return {posts: state.posts.items}
+return {posts: state.posts.postItems}
 }
 
 

@@ -27,6 +27,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    this.props.history.push("/login ");
+
     if(localStorage.token){
       fetch('http://localhost:3000/persist',{
         headers:{
@@ -35,7 +37,9 @@ class App extends React.Component {
       })
       .then(response => response.json()
       .then(json => this.handleAuthResponse(json)))
+
     }
+
   }
 //   componentDidMount(){
 //   //   let NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY
@@ -47,7 +51,6 @@ class App extends React.Component {
 handleAuthResponse = (response) => {
   if (response.user){
     localStorage.token = response.token
-    localStorage.user = response.user  
     this.setState({user: {
       id:response.user.id,
       username: response.user.username,
@@ -56,6 +59,10 @@ handleAuthResponse = (response) => {
       imageUrl:response.user.imageUrl}, token:response.token}
   )
   this.props.history.push("/portfolio");
+  }
+  else {
+    this.props.history.push("/login ");
+
   }
 }
   
@@ -83,13 +90,20 @@ handleSignUpSubmit = (e, newUser) => {
   api.auth.signup(newUser)
   .then(response => {
     if (!response.error) {
-   this.handleAuthResponse(response)
+  this.handleAuthResponse(response)
     }else{
       alert(response.error)
     }
   })
 
 };
+
+handleLogout = () => {
+  
+  localStorage.clear();
+  this.props.history.push("/login ");
+
+}
 
 render() {
   console.log(this.state)
@@ -119,7 +133,7 @@ render() {
           }}
         /> 
       <Route path="/stocks" component={StockContainer}/> 
-      <Route path="/Portfolio" component={Portfolio}/> 
+      <Route path="/Portfolio" component={Portfolio}/>
     </Switch>
     </div>
   );

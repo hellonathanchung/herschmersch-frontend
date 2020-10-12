@@ -12,18 +12,6 @@ const Navbar = (props) => {
           <Link to="/signup" className="navbar-list">
             Sign Up
           </Link>{" "}
-          <Link to="/stocks" className="navbar-list">
-            Stocks
-          </Link>{" "}
-          <Link to="/portfolio" className="navbar-list">
-            Portfolio
-          </Link>{" "}
-          <Link to="/posts/new" className="navbar-list">
-            New Post
-          </Link>{" "}
-          <Link to="/posts/" className="navbar-list">
-            All Posts
-          </Link>{" "}
         </div>
       ) : (
         <div className="navbar-list">
@@ -39,7 +27,7 @@ const Navbar = (props) => {
         <Link to="/posts/" className="navbar-list">
           All Posts
         </Link>{" "}
-        <Link to="/logout/" className="navbar-list">
+        <Link to="/logout/" className="navbar-list" onClick={props.handleLogout} >
           Logout
         </Link>{" "}
       </div>
