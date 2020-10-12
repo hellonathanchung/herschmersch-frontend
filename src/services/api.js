@@ -29,16 +29,16 @@ const getCurrentUser = () => {
 };
 
 
-const newPost = (newPost) => {
+// const newPost = (newPost) => {
   
-  fetch('http://jsonplaceholder.typicode.com/posts', {
-    method: 'POST',
-    headers: {
-      'content-type':'application/json'
-    },
-    body: JSON.stringify(newPost)
-  }).then((res) => res.json())
-.then(data => console.log(data))}
+//   fetch('http://jsonplaceholder.typicode.com/posts', {
+//     method: 'POST',
+//     headers: {
+//       'content-type':'application/json'
+//     },
+//     body: JSON.stringify(newPost)
+//   }).then((res) => res.json())
+// .then(data => console.log(data))}
 
 export default {
   auth: {
@@ -46,7 +46,7 @@ export default {
     getCurrentUser: getCurrentUser,
     signup: signup,
   },
-  post:{
-    newPost:newPost
-  }
+  // post:{
+  //   newPost:newPost
+  // }
 }

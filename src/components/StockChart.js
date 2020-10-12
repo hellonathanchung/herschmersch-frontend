@@ -1,7 +1,10 @@
 import React, { useRef } from "react";
 import ReactFrappeChart from "react-frappe-charts";
+import moment from 'moment'
 
 export default function MyChart(props) {
+  console.log("Hey Kevin", props.readableXValues)
+
   return (
     <ReactFrappeChart
       type="line"
@@ -9,8 +12,8 @@ export default function MyChart(props) {
       axisOptions={{ xAxisMode: "tick", yAxisMode: "tick", xIsSeries: 1 }}
       height={250}
       data={{
-        labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        datasets: [{ values: [18, 40, 30, 35, 8, 52, 17, 4] }],
+        labels: props.readableXValues,
+        datasets: [{ values: props.yValues }],
       }}
     />
   );

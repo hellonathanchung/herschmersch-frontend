@@ -1,7 +1,13 @@
-import React, { Component } from "react";
-import { connect } from 'react-redux'
-import {  } from '../actions/postActions'
+import React from "react";
+//https://newsapi.org/register/success
 
-class Ticker extends Component {}
 
-export default 
+const Ticker = (props) => {
+
+  
+  return (
+    <h1>Ticker</h1>
+  )
+  }
+
+export default Ticker

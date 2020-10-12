@@ -2,7 +2,9 @@ import React from 'react';
 import './App.css';
 import 'fomantic-ui-css/semantic.css';
 import api from './services/api'
-import StockChart from './components/StockChart'
+import { login } from './actions/loginActions.js'
+import { connect } from 'react-redux'
+
 
 
 
@@ -40,30 +42,8 @@ class App extends React.Component {
     }
 
   }
-//   componentDidMount(){
-//   //   let NEWS_API_KEY = process.env.REACT_APP_NEWS_API_KEY
-//   // const url = `http://newsapi.org/v2/everything?q=stocks&from=2020-09-07&sortBy=publishedAt&apiKey=${NEWS_API_KEY}`;
-//   // fetch(url)
-//   //     .then((response) => response.json())
-//   //     .then(articles => this.setState({articles : articles.articles}))
-// }
-handleAuthResponse = (response) => {
-  if (response.user){
-    localStorage.token = response.token
-    this.setState({user: {
-      id:response.user.id,
-      username: response.user.username,
-      posts:response.user.posts,
-      list_stocks:response.user.list_stocks,
-      imageUrl:response.user.imageUrl}, token:response.token}
-  )
-  this.props.history.push("/portfolio");
-  }
-  else {
-    this.props.history.push("/login ");
 
-  }
-}
+
   
 
 handleLoginSubmit = (event, userCredentials) => {
@@ -74,7 +54,7 @@ handleLoginSubmit = (event, userCredentials) => {
   api.auth.login(username, password)
   .then(response => {
     if (!response.error) {
-   this.handleAuthResponse(response)
+    this.handleAuthResponse(response)
     }else{
       alert(response.error)
     }
@@ -96,6 +76,28 @@ handleSignUpSubmit = (e, newUser) => {
   })
 
 };
+
+handleAuthResponse = (response) => {
+  if (response.user){
+    localStorage.token = response.token
+
+    this.props.login(response)
+    // .then(res => console.log(res))
+
+  //   this.setState({user: {
+  //     id:response.user.id,
+  //     username: response.user.username,
+  //     posts:response.user.posts,
+  //     list_stocks:response.user.list_stocks,
+  //     imageUrl:response.user.imageUrl}, token:response.token}
+  // )
+  this.props.history.push("/portfolio");
+  }
+  else {
+    this.props.history.push("/login ");
+
+  }
+}
 
 handleLogout = () => {
   
@@ -140,4 +142,6 @@ render() {
 }
 }
 
-export default withRouter(App)
+const mapDispatchToProps = (dispatch) => {return {login:(userCredentials) => dispatch(login(userCredentials))}}
+
+export default connect (null, mapDispatchToProps) ( withRouter(App))

@@ -3,15 +3,14 @@ import api from '../services/api'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { createPost } from '../actions/postActions'
+import {withRouter} from 'react-router-dom'
 
 
 class PostForm extends React.Component{
 
   state = {
     title: "",
-    content: "",
-    user_id: this.props.user.id,
-    token:this.props.token
+    content: ""
   };
 
   handleFormChange = (event) => {
@@ -24,10 +23,10 @@ class PostForm extends React.Component{
     const newPostData = {
       title: this.state.title,
       content:this.state.content,
-      user_id: this.props.user.id    
+      user_id: this.props.user_id    
     }
 // this is where we need to add redux
-this.props.createPost(newPostData, this.state.token)
+this.props.createPost(newPostData, localStorage.token)
 this.props.history.push('/posts')
 event.target.reset()
 }
@@ -61,4 +60,7 @@ event.target.reset()
 PostForm.propTypes = {
   createPost: PropTypes.func.isRequired
 }
-export default connect(null, {createPost})(PostForm)
+const mapStateToProps = (state) => {
+  return {user_id: state.user.user_id}
+}
+export default connect(mapStateToProps, {createPost})(withRouter(PostForm))
