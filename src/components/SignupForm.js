@@ -5,14 +5,14 @@ import api from "../services/api";
 class Signup extends React.Component {
   state = {
     newUser: {
-      first_name: "",
-      last_name: "",
+
       username: "",
       imageUrl: "",
       password: "",
       password_confirmation: "",
     },
   };
+
 
   handleOnChange = (e) => {
     let name = e.target.name;
@@ -22,46 +22,18 @@ class Signup extends React.Component {
     }));
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("submit");
-    let newUser = this.state.newUser;
-    api.auth.signup(newUser).then(console.log)
-
-    // api.auth.signup(newUser).then((response) => {
-    //   if (response.error) {
-    //     alert(response.error);
-    //     this.setState({ error: true });
-    //   } else {
-    //     this.props.handleLogin(response);
-    //     this.props.history.push("/");
-    //   }
-    // });
-  };
-
   render() {
+    let newUser = this.state.newUser
     return (
       
       <div className="service-container" >
         
         <form className="ui form"
           onChange={(e) => this.handleOnChange(e)}
-          onSubmit={(e) => this.handleSubmit(e)}
+          onSubmit={(e) => this.props.handleSignUpSubmit(e, newUser)}
         >
           <div>
             <div className="field" >
-              <input
-                type="text"
-                name="first_name"
-                placeholder="First Name"
-                value={this.state.first_name}
-              />
-              <input
-                type="text"
-                name="last_name"
-                placeholder="Last Name"
-                value={this.state.last_name}
-              />
               <input
                 type="text"
                 name="username"
@@ -70,7 +42,7 @@ class Signup extends React.Component {
               />
               <input
                 type="text"
-                name="imageURL"
+                name="imageUrl"
                 placeholder="Image URL"
                 value={this.state.imageUrl}
               />

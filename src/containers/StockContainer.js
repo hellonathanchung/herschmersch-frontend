@@ -1,62 +1,66 @@
 import React, { Component } from "react";
-import { createChart } from 'lightweight-charts';
+import StockChart from '../components/StockChart'
+import Ticker from '../components/Ticker'
+import { connect } from 'react-redux'
+// import {fetchStocks} from '../actions/stockActions'
+import moment from 'moment'
 
-class Stock extends Component {
 
-    state = {
-        stockName: "",
-        stockChartXValues: [],
-        stockChartYValues: [],
-        stockData: {}
-    }
+class StockContainer extends Component {
 
-    componentDidMount() {
-        this.fetchStock()
+    // state = {
+    //     stockName: "",
+    //     stockChartXValues: [],
+    //     stockChartYValues: [],
+    //     stockData: {}
+    // }
 
-    }
+    // componentDidMount() {
+    //     this.props.fetchStocks()
+    // }
 
-    fetchStock() {
-        let API_KEY = process.env.REACT_APP_MARKETSTACK_API_KEY
-        console.log(API_KEY)
-        const pointerToThis = this;
-        let stockTicker = 'MSFT'
-        let URL = `http://api.marketstack.com/v1/eod?access_key=${API_KEY}&symbols=${stockTicker}`
-        let stockChartXValuesFunction = []
-        let stockChartYValuesFunction = []
+    // fetchStock() {
+    //     let API_KEY = process.env.REACT_APP_MARKETSTACK_API_KEY
+    //     console.log(API_KEY)
+    //     const pointerToThis = this;
+    //     let stockTicker = 'MSFT'
+    //     let URL = `http://api.marketstack.com/v1/eod?access_key=${API_KEY}&symbols=${stockTicker}`
+    //     let stockChartXValuesFunction = []
+    //     let stockChartYValuesFunction = []
 
-        fetch(URL).then(res => res.json())
-        .then(data => console.log(data))
-
-        // fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${stockTicker}&outputsize=compact&apikey=${API_KEY}`)
-        //     .then(response => response.json())
-        //     .then( stockData => this.setState({stockdata:stockData['Time Series (Daily)']}))
-        // fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${stockTicker}&outputsize=compact&apikey=${API_KEY}`)
-        //     .then((response) => response.json())
-        //     .then( function(data) {console.log(data);
-        //         for (var key in data['Time Series (Daily)']) {
-        //             stockChartXValuesFunction.push(key);
-        //             stockChartYValuesFunction.push(data['Time Series (Daily)'][key]['1. open']);
-        //         }
-        //         console.log(stockChartXValuesFunction);
-        //         pointerToThis.setState({
-        //             stockChartXValues: stockChartXValuesFunction,
-        //             stockChartYValues: stockChartYValuesFunction
-        //         });
-        //         }
-        //     )
-        
-    }
-
-    
+    //     fetch(URL)
+    //     .then(res => res.json())
+    //     .then( function(stockData) {console.log(stockData);
+    //         stockData.data.map( stockDate => {
+    //             stockChartXValuesFunction.push(stockDate.date)
+    //             stockChartYValuesFunction.push(stockDate.high)}
+    //         )}
+    //     )
+    //     this.setState({stockChartXValues:stockChartXValuesFunction,
+    //     stockChartYValues:stockChartYValuesFunction})
+    //     }
 
 render() {
+    // let xValues = this.props.stockXValues
 
-
+    // let readableXValues = xValues.map(date => (moment(date).format("MMM Do YY")))
 return (
-    <div className = "card">
-        <h1 > Stock Market</h1>
+    <div >
+        {/* <StockChart
+        // xValues={this.state.stockChartXValues}
+        // readableXValues={readableXValues}
+        // yValues={this.props.stockYValues}
+        /> */}
+        <h1 > <Ticker/></h1>
     </div>
         )
     }
 }
-export default Stock
+
+// const mapStateToProps = (state) => {
+//     return {stockXValues: state.stocks.stockXValues,
+//      stockYValues: state.stocks.stockYValues,
+//     }
+//     }
+// export default connect( null, { fetchStocks })(StockContainer)
+export default StockContainer

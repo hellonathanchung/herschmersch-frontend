@@ -11,7 +11,7 @@ class PostContainer extends Component {
   }
   
   render () {
-    // debugger
+    
     const postItems = this.props.posts.map(post => 
       <div className="ui raised very padded text container segment" key={post.id}>
         <h2 className="ui header">{post.title}</h2>
@@ -29,7 +29,7 @@ class PostContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-return {posts: state.posts.items}
+return {posts: state.posts.postItems}
 }
 
 

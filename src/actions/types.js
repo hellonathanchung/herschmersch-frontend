@@ -3,3 +3,13 @@ export const NEW_POST = 'NEW_POST'
 
 export const FETCH_TICKERS = 'FETCH_TICKERS'
 export const ADD_LIST_STOCK = 'ADD_LIST_STOCK'
+
+export const LOGIN_USER = "LOGIN_USER"
+
+//STOCK ACTIONS
+export const FETCH_STOCKS = 'FETCH_STOCKS'
+
+
+//STOCK_LIST_ACTIONS
+export const ADD_STOCK_TO_LIST = "ADD_STOCK_TO_LIST"
+export const FETCH_STOCK_LISTS = "FETCH_LIST_STOCKS"
