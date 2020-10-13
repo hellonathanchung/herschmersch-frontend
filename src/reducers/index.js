@@ -1,8 +1,12 @@
   import { combineReducers } from 'redux'
   import postReducer from './postReducer'
   import loginReducer from './loginReducer'
+  import tickerReducer from './tickerReducer'
+  import stockReducer from './stockReducer'
 
   export default combineReducers({
     posts: postReducer,
-    user: loginReducer
+    user: loginReducer,
+    tickers: tickerReducer,
+    stocks: stockReducer
   })

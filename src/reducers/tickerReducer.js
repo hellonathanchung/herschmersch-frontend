@@ -2,25 +2,26 @@ import {FETCH_TICKERS, ADD_LIST_STOCK} from '../actions/types'
 
 const initialState = {
   //represents items coming in from action.
-  items: [],
-  item: {}
+  tickers: [],
+  ticker: {}
   //item represents a single post that we add.
 }
 
 export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_TICKERS:
-      console.log('reducer')
+      console.log("reducer",'fetching ticker')
       return {
         ...state,
-        items: action.payload
+        tickers: action.payload
       }
       case ADD_LIST_STOCK:
       return {
         ...state,
-        item: action.payload
+        ticker: action.payload
       }
     default: 
       return state;
   }
 }
+
