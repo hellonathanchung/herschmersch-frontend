@@ -1,7 +1,6 @@
 import {FETCH_STOCKS} from './types'
 
 export const fetchStocks = () => dispatch =>  {
-  console.log(1, "fetching Stocks")
   let API_KEY = process.env.REACT_APP_MARKETSTACK_API_KEY
   const pointerToThis = this;
   let stockTicker = 'MSFT'
@@ -15,12 +14,17 @@ export const fetchStocks = () => dispatch =>  {
       stockData.data.map( stockDate => {
           stockChartX.push(stockDate.date)
           stockChartY.push(stockDate.high)}
-      )}
+      )
+      dispatch({
+        type: FETCH_STOCKS,
+        payload: stockInformation
+      })}
   )
-  dispatch({
-    type: FETCH_STOCKS
-    stockXValues:stockChartX,
-    stockYValues:stockChartY
-  })
+  const stockInformation = {
+    symbol: stockTicker,
+    stockChartXValues: stockChartX,
+    stockChartYValues: stockChartY
+  }
  
   }
+

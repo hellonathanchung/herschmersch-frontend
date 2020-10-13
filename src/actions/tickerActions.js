@@ -10,7 +10,7 @@ export const fetchTickers = () => dispatch => {
     .then(tickers => 
       dispatch({
         type: FETCH_TICKERS,
-        payload: tickers
+        payload: tickers.data
     })
     )
 }

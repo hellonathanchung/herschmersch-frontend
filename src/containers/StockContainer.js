@@ -2,22 +2,22 @@ import React, { Component } from "react";
 import StockChart from '../components/StockChart'
 import Ticker from '../components/Ticker'
 import { connect } from 'react-redux'
-import {fetchStocks} from '../actions/stockActions'
+// import {fetchStocks} from '../actions/stockActions'
 import moment from 'moment'
 
 
 class StockContainer extends Component {
 
-    state = {
-        stockName: "",
-        stockChartXValues: [],
-        stockChartYValues: [],
-        stockData: {}
-    }
+    // state = {
+    //     stockName: "",
+    //     stockChartXValues: [],
+    //     stockChartYValues: [],
+    //     stockData: {}
+    // }
 
-    componentDidMount() {
-        this.props.fetchStocks()
-    }
+    // componentDidMount() {
+    //     this.props.fetchStocks()
+    // }
 
     // fetchStock() {
     //     let API_KEY = process.env.REACT_APP_MARKETSTACK_API_KEY
@@ -41,24 +41,26 @@ class StockContainer extends Component {
     //     }
 
 render() {
-    let xValues = this.state.stockChartXValues
+    // let xValues = this.props.stockXValues
 
-    let readableXValues = xValues.map(date => (moment(date).format("MMM Do YY")))
+    // let readableXValues = xValues.map(date => (moment(date).format("MMM Do YY")))
 return (
     <div >
-        <StockChart
-        xValues={this.state.stockChartXValues}
-        readableXValues={readableXValues}
-        yValues={this.state.stockChartYValues}/>
-        <div className="card">
+        {/* <StockChart
+        // xValues={this.state.stockChartXValues}
+        // readableXValues={readableXValues}
+        // yValues={this.props.stockYValues}
+        /> */}
         <h1 > <Ticker/></h1>
-        </div>
     </div>
         )
     }
 }
 
-const mapStateToProps = (state) => {
-    return {stocks: state.stocks}
-    }
-export default connect( mapStateToProps, { fetchStocks })(StockContainer)
+// const mapStateToProps = (state) => {
+//     return {stockXValues: state.stocks.stockXValues,
+//      stockYValues: state.stocks.stockYValues,
+//     }
+//     }
+// export default connect( null, { fetchStocks })(StockContainer)
+export default StockContainer

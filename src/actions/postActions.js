@@ -15,7 +15,6 @@ export const fetchPosts = () => dispatch => {
 export const createPost = (postData, token) => dispatch => {
 
   console.log('adding a post...')
-debugger
   fetch('http://localhost:3000/api/v1/posts', {
     method: 'POST',
     headers: {
