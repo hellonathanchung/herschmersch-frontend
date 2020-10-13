@@ -18,7 +18,7 @@ class Ticker extends Component {
 render () {
 
   const tickerItems = this.props.tickers.map(ticker => 
-    <div className="ui-stackable four column grid">
+    <div className="ui stackable four column grid">
       <div  className="column">{ticker.name}</div>
       <div  className="column">{ticker.symbol}</div>
       <Button onClick={(e)=> this.props.addStockToList(e, ticker.name, ticker.symbol)} className="ui-button"> Add Stock </Button>
