@@ -22,7 +22,7 @@ render () {
       <div className="ui raised link card" onMouseEnter={(e)=> this.props.fetchStocks(ticker.symbol)}>
         <div className="description">{ticker.name}</div>
         <div div  className="description">{ticker.symbol}</div>
-      {/* <Button onHover={(e)=> this.props.addStockToList(e, ticker.name, ticker.symbol)} className="ui button"> Add Stock </Button> */}
+      <Button onClick={(e)=> this.props.addStockToList(e, ticker.name, ticker.symbol)} className="ui button"> Add Stock </Button>
       {/* <Button onMouseEnter={(e)=> this.props.fetchStocks(ticker.symbol)} className="ui button"> Add Stock </Button> */}
       <Modal
       trigger={<Button primary>View More </Button>}

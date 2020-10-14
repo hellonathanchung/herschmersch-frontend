@@ -1,5 +1,4 @@
 import React from 'react';
-import StockChart from '../components/StockChart'
 import { connect } from 'react-redux'
 
 
