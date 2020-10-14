@@ -28,7 +28,7 @@ export const addStockToList = (e,name, symbol) => dispatch =>  {
 
   // need to include list_portfolio:"Portfolio" 
 
-  const API_ROOT = `http://localhost:3000/api/v1/`;
+
 
 }
 
