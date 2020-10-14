@@ -23,7 +23,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var initialState = {
   //represents items coming in from action.
-  stockLists: [] //item represents a single post that we add.
+  stockList: [] //item represents a single post that we add.
 
 };
 
@@ -34,22 +34,20 @@ function _default() {
   switch (action.type) {
     case _types.INITIAL_STOCK_LIST:
       return _objectSpread({}, state, {
-        stockLists: action.payload
+        stockList: action.payload
       });
 
     case _types.ADD_STOCK_TO_LIST:
       return _objectSpread({}, state, {
-        stockLists: [].concat(_toConsumableArray(state.stockLists), [action.payload])
+        stockList: [].concat(_toConsumableArray(state.stockList), [action.payload])
       });
-    // case REMOVE_STOCK_FROM_LIST:{
-    //   const list = state.user.userStocks.filter(
-    //     (userStock) => userStock.id !== parseInt(action.payload)
-    //     return {
-    //       ...state,
-    //       user: {
-    //         userStocks: action.payload
-    //       }
-    //     })
+
+    case _types.REMOVE_STOCK_FROM_LIST:
+      return _objectSpread({}, state, {
+        stockList: _toConsumableArray(state.stockList.filter(function (stock) {
+          return stock.id !== parseInt(action.payload);
+        }))
+      });
 
     default:
       return state;

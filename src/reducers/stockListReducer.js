@@ -2,7 +2,7 @@ import {INITIAL_STOCK_LIST, ADD_STOCK_TO_LIST, REMOVE_STOCK_FROM_LIST } from '..
 
 const initialState = {
   //represents items coming in from action.
-  stockLists: [],
+  stockList: [],
   //item represents a single post that we add.
 }
 
@@ -12,22 +12,18 @@ export default function(state = initialState, action) {
     case INITIAL_STOCK_LIST:
       return {
         ...state,
-        stockLists: action.payload
+        stockList: action.payload
       }
       case ADD_STOCK_TO_LIST:
       return {
         ...state,
-        stockLists: [...state.stockLists, action.payload]
+        stockList: [...state.stockList, action.payload]
       }
-      // case REMOVE_STOCK_FROM_LIST:{
-      //   const list = state.user.userStocks.filter(
-      //     (userStock) => userStock.id !== parseInt(action.payload)
-      //     return {
-      //       ...state,
-      //       user: {
-      //         userStocks: action.payload
-      //       }
-      //     })
+      case REMOVE_STOCK_FROM_LIST:
+        return {
+          ...state,
+          stockList: [...state.stockList.filter(stock => stock.id !== parseInt(action.payload))]
+        }
     default: 
       return state;
   }

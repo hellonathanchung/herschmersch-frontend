@@ -35,14 +35,9 @@ export const removeStockFromList = (e, stockId) => dispatch =>  {
       'Authorization': `Bearer ${localStorage.token}`
     },
  }).then((res) => res.json())
-.then(post =>
+ .then(data =>
   dispatch({
-  type: REMOVE_STOCK_FROM_LIST,
+    type: REMOVE_STOCK_FROM_LIST,
+    payload: stockId 
   }))
-
-  // need to include list_portfolio:"Portfolio" 
-
-
-
 }
-

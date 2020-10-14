@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import StockChart from '../components/StockChart'
 import Ticker from '../components/Ticker'
 import { connect } from 'react-redux'
 // import {fetchStocks} from '../actions/stockActions'
 import moment from 'moment'
+import Portfolio from '../containers/Portfolio'
 
 
 class StockContainer extends Component {

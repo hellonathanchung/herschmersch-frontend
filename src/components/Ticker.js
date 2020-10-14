@@ -24,7 +24,7 @@ render () {
         <div div  className="description">{ticker.symbol}</div>
       <Button onClick={(e)=> this.props.addStockToList(e, ticker.name, ticker.symbol)} className="ui button"> Add Stock </Button>
       <Modal
-      trigger={<Button primary>View More </Button>}
+      trigger={<Button red>View More </Button>}
       header={ticker.name}
       content= {<StockChart symbol={ticker.symbol}/>}
       actions={['Add Stock', { key: 'done', content: 'Done', positive: true }]}

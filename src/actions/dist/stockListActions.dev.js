@@ -47,11 +47,12 @@ var removeStockFromList = function removeStockFromList(e, stockId) {
       }
     }).then(function (res) {
       return res.json();
-    }).then(function (post) {
+    }).then(function (data) {
       return dispatch({
-        type: _types.REMOVE_STOCK_FROM_LIST
+        type: _types.REMOVE_STOCK_FROM_LIST,
+        payload: stockId
       });
-    }); // need to include list_portfolio:"Portfolio" 
+    });
   };
 };
 
