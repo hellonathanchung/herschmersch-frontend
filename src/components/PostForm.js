@@ -1,5 +1,4 @@
 import React from 'react';
-import api from '../services/api'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { createPost } from '../actions/postActions'

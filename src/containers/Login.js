@@ -1,6 +1,5 @@
 import React from 'react';
-import api from '../services/api'
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 
 //handle forms with state
 
