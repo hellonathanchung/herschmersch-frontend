@@ -21,7 +21,7 @@ class PostContainer extends Component {
 
     return(
       <div>
-       <PostForm/>
+      <PostForm/>
       {postItems}
     </div>
   )

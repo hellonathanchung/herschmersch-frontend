@@ -11,7 +11,6 @@ user_id: 0
 export default function(state = initialState, action) {
   switch(action.type) {
     case LOGIN_USER:
-      console.log('login reducer')
       return {
         ...state,
         username: action.payload.username,
