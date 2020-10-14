@@ -65,7 +65,6 @@ handleLoginSubmit = (event, userCredentials) => {
 handleSignUpSubmit = (e, newUser) => {
   e.preventDefault();
   console.log("submit");
-  // let newUser = this.state.newUser;
   api.auth.signup(newUser)
   .then(response => {
     if (!response.error) {

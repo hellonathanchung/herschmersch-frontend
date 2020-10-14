@@ -27,11 +27,10 @@ var login = function login(userCredentials) {
       username: username,
       user_id: user_id
     }
-  }; // return fetch(`${API_ROOT}login`, {
-  //   method: "POST",
-  //   headers: headers,
-  //   body: JSON.stringify({ username, password }),
-  // }).then((res) => res.json());
+  }, {
+    type: "INITIAL_STOCK_LIST",
+    payload: userStocks
+  };
 };
 
 exports.login = login;

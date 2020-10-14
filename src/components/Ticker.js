@@ -23,17 +23,13 @@ render () {
         <div className="description">{ticker.name}</div>
         <div div  className="description">{ticker.symbol}</div>
       <Button onClick={(e)=> this.props.addStockToList(e, ticker.name, ticker.symbol)} className="ui button"> Add Stock </Button>
-      {/* <Button onMouseEnter={(e)=> this.props.fetchStocks(ticker.symbol)} className="ui button"> Add Stock </Button> */}
       <Modal
       trigger={<Button primary>View More </Button>}
       header={ticker.name}
       content= {<StockChart symbol={ticker.symbol}/>}
-      // content= {<StockChart symbol={ticker.symbol}/>}
-     
       actions={['Add Stock', { key: 'done', content: 'Done', positive: true }]}
     />
     </div>
-   
   )
   return (
     <div>
@@ -41,7 +37,7 @@ render () {
     <h1>Tickers</h1>
     <div className="ui cards">
     {tickerItems}
-     </div>
+    </div>
     </div>
     )
   

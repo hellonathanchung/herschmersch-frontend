@@ -27,7 +27,6 @@ function _default() {
 
   switch (action.type) {
     case _types.LOGIN_USER:
-      console.log('login reducer');
       return _objectSpread({}, state, {
         username: action.payload.username,
         userPosts: action.payload.userPosts,

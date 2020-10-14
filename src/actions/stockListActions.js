@@ -19,10 +19,10 @@ export const addStockToList = (e,name, symbol) => dispatch =>  {
     },
     body: JSON.stringify(stockListInformation)
   }).then((res) => res.json())
-.then(post =>
-  dispatch({
-  type: ADD_STOCK_TO_LIST,
-  payload: stockListInformation})
+    .then(post =>
+    dispatch({
+    type: ADD_STOCK_TO_LIST,
+    payload: stockListInformation})
 )
   }
 

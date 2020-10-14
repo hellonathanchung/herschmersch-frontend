@@ -23,10 +23,10 @@ export const createPost = (postData, token) => dispatch => {
     },
     body: JSON.stringify(postData)
   }).then((res) => res.json())
-.then(post =>
-  dispatch({
-  type: NEW_POST,
-  payload: post})
-)
+  .then(post =>
+    dispatch({
+    type: NEW_POST,
+    payload: post})
+  )
 console.log("Post has been created")
 }
