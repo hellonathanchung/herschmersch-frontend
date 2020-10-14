@@ -9,7 +9,7 @@ import moment from 'moment'
 class StockContainer extends Component {
 
     // state = {
-    //     stockName: "",
+//     stockName: "",
     //     stockChartXValues: [],
     //     stockChartYValues: [],
     //     stockData: {}

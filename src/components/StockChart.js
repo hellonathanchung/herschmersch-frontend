@@ -7,10 +7,10 @@ import { connect } from 'react-redux'
 
 class StockChart extends Component {
   // will probably need to pass in the API query into the fetch stocks so that the ftech stock can be interpolated within the API.
-  componentDidMount() {
-    let newSymbol = this.props.symbol
-    this.props.fetchStocks(newSymbol)
-}
+//   componentDidMount() {
+//     let newSymbol = this.props.symbol
+//     this.props.fetchStocks(newSymbol)
+// }
   render () {
     let newSymbol = this.props.symbol
     this.props.fetchStocks(newSymbol)
