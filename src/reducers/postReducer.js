@@ -10,7 +10,6 @@ const initialState = {
 export default function(state = initialState, action) {
   switch(action.type) {
     case FETCH_POSTS:
-      console.log('reducer')
       return {
         ...state,
         postItems: action.payload
@@ -18,7 +17,7 @@ export default function(state = initialState, action) {
       case NEW_POST:
       return {
         ...state,
-        postItem: [...state.postItem, action.payload],
+        postItems: [...state.postItems, action.payload],
       }
     default: 
       return state;

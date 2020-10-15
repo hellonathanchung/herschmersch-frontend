@@ -1,4 +1,4 @@
-import {LOGIN_USER} from './types'
+import {LOGIN_USER, INITIAL_STOCK_LIST} from './types'
 
 const API_ROOT = `http://localhost:3000/api/v1/`;
 
@@ -8,17 +8,20 @@ const headers = {
   Authorization: `Bearers ${localStorage.token}`,
 };
 
-export const login = (userCredentials) => {
+export const login = (userCredentials)=> dispatch=> {
   const userPosts = userCredentials.user.posts
   const userStocks = userCredentials.user.list_stocks
   const username = userCredentials.user.username
   const user_id = userCredentials.user.id
-  return ({
-    type: "LOGIN_USER",
+    dispatch (
+    {
+    type: INITIAL_STOCK_LIST,
+    payload: userStocks})
+  
+    dispatch({
+    type: LOGIN_USER,
     payload: {userPosts, userStocks, username, user_id}
-  },
-  {type: "INITIAL_STOCK_LIST",
-  payload: userStocks}) 
+  }) 
 
 };
 
