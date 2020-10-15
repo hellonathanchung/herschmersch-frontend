@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { createPost } from '../actions/postActions'
 import {withRouter} from 'react-router-dom'
+import { Button } from 'semantic-ui-react'
+
 
 
 class PostForm extends React.Component{
@@ -22,12 +24,11 @@ class PostForm extends React.Component{
     const newPostData = {
       title: this.state.title,
       content:this.state.content,
-      user_id: this.props.user_id    
+      user_id: this.props.user_id
     }
-// this is where we need to add redux
-this.props.createPost(newPostData, localStorage.token)
-this.props.history.push('/posts')
-event.target.reset()
+    this.props.createPost(newPostData, localStorage.token)
+    this.props.history.push('/posts')
+    this.props.handlePostClick()    
 }
   render () {
     console.log(this.state)
@@ -46,7 +47,7 @@ event.target.reset()
           <label>Content</label>
           <textarea name="content"/>
     <br/>
-    <button className="ui-button">Add Post</button>
+    <Button className="ui-button">Add Post</Button>
     </div>
     </div>
     </form>

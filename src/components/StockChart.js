@@ -7,9 +7,12 @@ import { connect } from 'react-redux'
 
 class StockChart extends Component {
 
-  render () {
+  componentDidMount() {
     let newSymbol = this.props.symbol
     this.props.fetchStocks(newSymbol)
+  }
+  render () {
+   
 
     let xValues=this.props.stockXValues
     let readableXValues = xValues.map(date => (moment(date).format("MMM Do YY")))
@@ -36,8 +39,8 @@ class StockChart extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    stockXValues: state.stocks.stockXValues,
-    stockYValues: state.stocks.stockYValues,
+    stockXValues: state.stocks.stockXValues.reverse(),
+    stockYValues: state.stocks.stockYValues.reverse(),
     stockSymbol: state.stocks.stockSymbol
   }
   }

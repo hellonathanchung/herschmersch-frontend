@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import PostForm from  "../components/PostForm"
 import { connect } from 'react-redux'
-import { fetchPosts } from '../actions/postActions'
+import { fetchPosts, deletePost } from '../actions/postActions'
 import { Button, Modal } from 'semantic-ui-react'
 
 
 class PostContainer extends Component {
 
+state = {
+  clicked: false
+}
   componentDidMount() {
   this.props.fetchPosts()
   }
+
+  handlePostClick = (e) => {
+    console.log(e)
+    this.setState({
+      clicked: !this.state.clicked}
+    )}
   
   render () {
     
@@ -18,14 +27,18 @@ class PostContainer extends Component {
         <h2 className="ui header">{post.title}</h2>
         <h4 className="ui header"> {post.user.full_name}</h4>
         <h4 className="ui header"> {post.user.full_name}</h4>
-        <Button> Add Stock </Button>
         <p>{post.content}</p>
+        <Button> Edit Post </Button>
+        <Button onClick={(e) => this.props.deletePost(e, post.id)}>Delete Post </Button>
       </div>)
 
     return(
       <div>
-      <PostForm/>
-      {postItems}
+        {this.state.clicked === false?
+        <Button onClick={(e) => this.handlePostClick(e) }> Add a post </Button>:(
+        <PostForm handlePostClick={this.handlePostClick} />)}
+
+       {postItems} 
     </div>
   )
 }
@@ -36,4 +49,4 @@ return {posts: state.posts.postItems}
 }
 
 
-export default connect(mapStateToProps, { fetchPosts })(PostContainer)
+export default connect(mapStateToProps, { fetchPosts, deletePost })(PostContainer)

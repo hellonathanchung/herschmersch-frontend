@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.createPost = exports.fetchPosts = void 0;
+exports.deletePost = exports.createPost = exports.fetchPosts = void 0;
 
 var _types = require("./types");
 
@@ -46,3 +46,25 @@ var createPost = function createPost(postData, token) {
 };
 
 exports.createPost = createPost;
+
+var deletePost = function deletePost(e, postId) {
+  return function (dispatch) {
+    fetch("http://localhost:3000/api/v1/posts/".concat(postId), {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer ".concat(localStorage.token)
+      }
+    }).then(function (res) {
+      return res.json();
+    }).then(function (data) {
+      return dispatch({
+        type: _types.DELETE_POST,
+        payload: postId
+      });
+    });
+    console.log("Post has been deleted");
+  };
+};
+
+exports.deletePost = deletePost;

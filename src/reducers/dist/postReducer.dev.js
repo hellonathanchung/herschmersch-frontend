@@ -43,6 +43,14 @@ function _default() {
         postItems: [].concat(_toConsumableArray(state.postItems), [action.payload])
       });
 
+    case _types.DELETE_POST:
+      debugger;
+      return _objectSpread({}, state, {
+        postItems: _toConsumableArray(state.postItems.filter(function (postItem) {
+          return postItem.id !== parseInt(action.payload);
+        }))
+      });
+
     default:
       return state;
   }
