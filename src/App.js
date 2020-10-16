@@ -5,10 +5,6 @@ import api from './services/api'
 import { login } from './actions/loginActions.js'
 import { connect } from 'react-redux'
 
-
-
-
-
 // containers
 import PostContainer from './containers/PostContainer'
 import Portfolio from './containers/Portfolio'
@@ -27,7 +23,6 @@ import { BrowserRouter as Router, Link, NavLink, Route, Switch, withRouter } fro
 class App extends React.Component {
  state = {
    user:{},
-
   }
 
   componentDidMount() {
@@ -79,22 +74,11 @@ handleSignUpSubmit = (e, newUser) => {
 handleAuthResponse = (response) => {
   if (response.user){
     localStorage.token = response.token
-
     this.props.login(response)
-    // .then(res => console.log(res))
-
-  //   this.setState({user: {
-  //     id:response.user.id,
-  //     username: response.user.username,
-  //     posts:response.user.posts,
-  //     list_stocks:response.user.list_stocks,
-  //     imageUrl:response.user.imageUrl}, token:response.token}
-  // )
-  this.props.history.push("/portfolio");
+    this.props.history.push("/portfolio");
   }
   else {
     this.props.history.push("/login ");
-
   }
 }
 

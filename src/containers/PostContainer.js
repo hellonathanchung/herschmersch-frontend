@@ -25,8 +25,7 @@ state = {
     const postItems = this.props.posts.map(post => 
       <div className="ui raised very padded text container segment" key={post.id}>
         <h2 className="ui header">{post.title}</h2>
-        <h4 className="ui header"> {post.user.full_name}</h4>
-        <h4 className="ui header"> {post.user.full_name}</h4>
+        <h4 className="ui header"> Post by: {post.user.username}</h4>
         <p>{post.content}</p>
         <Button> Edit Post </Button>
         <Button onClick={(e) => this.props.deletePost(e, post.id)}>Delete Post </Button>
@@ -37,7 +36,6 @@ state = {
         {this.state.clicked === false?
         <Button onClick={(e) => this.handlePostClick(e) }> Add a post </Button>:(
         <PostForm handlePostClick={this.handlePostClick} />)}
-
        {postItems} 
     </div>
   )
