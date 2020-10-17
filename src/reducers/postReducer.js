@@ -1,4 +1,4 @@
-import {FETCH_POSTS, NEW_POST, DELETE_POST} from '../actions/types'
+import {FETCH_POSTS, NEW_POST, DELETE_POST, UPDATE_POST} from '../actions/types'
 
 const initialState = {
   //represents items coming in from action.
@@ -20,10 +20,16 @@ export default function(state = initialState, action) {
         postItems: [...state.postItems, action.payload],
       }
       case DELETE_POST:
-        debugger
       return {
         ...state,
         postItems: [...state.postItems.filter(postItem => postItem.id !== parseInt(action.payload))]
+      }
+      case UPDATE_POST:
+        debugger
+        let updatedPostItems = [...state.postItems.filter(postItem => postItem.id !== parseInt(action.payload)), action.payload]
+      return {
+        ...state,
+        postItems: updatedPostItems
       }
     default: 
       return state;

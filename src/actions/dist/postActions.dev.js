@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.deletePost = exports.createPost = exports.fetchPosts = void 0;
+exports.deletePost = exports.updatePost = exports.createPost = exports.fetchPosts = void 0;
 
 var _types = require("./types");
 
@@ -46,6 +46,31 @@ var createPost = function createPost(postData, token) {
 };
 
 exports.createPost = createPost;
+
+var updatePost = function updatePost(event, postId, postData, token) {
+  return function (dispatch) {
+    debugger;
+    console.log('updating a post...');
+    fetch("http://localhost:3000/api/v1/posts/".concat(postId), {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': "Bearer ".concat(token)
+      },
+      body: JSON.stringify(postData)
+    }).then(function (res) {
+      return res.json();
+    }).then(function (post) {
+      return dispatch({
+        type: _types.UPDATE_POST,
+        payload: post
+      });
+    });
+    console.log("Post has been created");
+  };
+};
+
+exports.updatePost = updatePost;
 
 var deletePost = function deletePost(e, postId) {
   return function (dispatch) {

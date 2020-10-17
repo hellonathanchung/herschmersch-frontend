@@ -44,11 +44,19 @@ function _default() {
       });
 
     case _types.DELETE_POST:
-      debugger;
       return _objectSpread({}, state, {
         postItems: _toConsumableArray(state.postItems.filter(function (postItem) {
           return postItem.id !== parseInt(action.payload);
         }))
+      });
+
+    case _types.UPDATE_POST:
+      debugger;
+      var updatedPostItems = [].concat(_toConsumableArray(state.postItems.filter(function (postItem) {
+        return postItem.id !== parseInt(action.payload);
+      })), [action.payload]);
+      return _objectSpread({}, state, {
+        postItems: updatedPostItems
       });
 
     default:

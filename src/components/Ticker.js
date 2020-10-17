@@ -10,7 +10,6 @@ import StockChart from './StockChart'
 
 class Ticker extends Component {
 
-
   componentDidMount() {
     this.props.fetchTickers()
     }
