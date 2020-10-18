@@ -29,6 +29,13 @@ class PostForm extends React.Component{
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  handleEditMode = () => {
+    let editMode = this.state.editMode
+    this.setState({
+      editMode: !editMode
+    })
+  }
+
   handlePostSubmit = (event) => { 
     event.preventDefault();
 
@@ -42,8 +49,6 @@ class PostForm extends React.Component{
       content:this.state.content,
       user_id: this.props.user_id
     }
-
-    debugger
       this.state.editMode ?
       this.props.updatePost(event, this.props.postData.id, newPostData, localStorage.token) : this.props.createPost( newPostData, localStorage.token)
       this.props.history.push('/posts')
@@ -52,7 +57,6 @@ class PostForm extends React.Component{
 }
   render () {
     const {editMode, post} = this.state;
-    console.log(this.state)
     const buttonTitle = editMode ? 'Edit a Post' : 'Create a Post';
     const postTitle = editMode ? 'Update' : 'Create';
     return (
