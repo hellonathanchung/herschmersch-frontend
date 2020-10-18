@@ -3,11 +3,16 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.INITIAL_STOCK_LIST = exports.REMOVE_STOCK_FROM_LIST = exports.ADD_STOCK_TO_LIST = exports.FETCH_STOCKS = exports.LOGIN_USER = exports.ADD_LIST_STOCK = exports.FETCH_TICKERS = exports.NEW_POST = exports.FETCH_POSTS = void 0;
+exports.INITIAL_STOCK_LIST = exports.REMOVE_STOCK_FROM_LIST = exports.ADD_STOCK_TO_LIST = exports.FETCH_STOCKS = exports.LOGIN_USER = exports.ADD_LIST_STOCK = exports.FETCH_TICKERS = exports.UPDATE_POST = exports.DELETE_POST = exports.NEW_POST = exports.FETCH_POSTS = void 0;
+//POST ACTIONS
 var FETCH_POSTS = 'FETCH_POSTS';
 exports.FETCH_POSTS = FETCH_POSTS;
 var NEW_POST = 'NEW_POST';
 exports.NEW_POST = NEW_POST;
+var DELETE_POST = "DELETE_POST";
+exports.DELETE_POST = DELETE_POST;
+var UPDATE_POST = "UPDATE_POST";
+exports.UPDATE_POST = UPDATE_POST;
 var FETCH_TICKERS = 'FETCH_TICKERS';
 exports.FETCH_TICKERS = FETCH_TICKERS;
 var ADD_LIST_STOCK = 'ADD_LIST_STOCK';
