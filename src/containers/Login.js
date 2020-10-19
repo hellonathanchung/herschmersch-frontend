@@ -1,4 +1,6 @@
 import React from 'react';
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+
 // import {connect} from 'react-redux'
 
 //handle forms with state
@@ -23,7 +25,7 @@ render() {
     <div className="ui one column stackable center aligned page grid" >
     <div className="column twelve wide">
 
-    <form className = "ui form" onSubmit = {(event) => this.props.handleLoginSubmit(event, userCrendentials)}>
+    <Form className = "ui form" onSubmit = {(event) => this.props.handleLoginSubmit(event, userCrendentials)}>
       <h2>Please log in below:</h2>
       <div className="field">
         <label name="username">Username</label>
@@ -51,7 +53,7 @@ render() {
 
       <br></br>
       <button className="ui-button">Submit</button>
-    </form>
+    </Form>
     <div>
       <br></br>
     </div>

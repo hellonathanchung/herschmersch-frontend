@@ -11,7 +11,9 @@ import StockChart from './StockChart'
 class Ticker extends Component {
 
   componentDidMount() {
-    this.props.fetchTickers()
+    if (this.props.tickers.tickers != [] ) {
+      this.props.fetchTickers()
+    }
     }
 
     

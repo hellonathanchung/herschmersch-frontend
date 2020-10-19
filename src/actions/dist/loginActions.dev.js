@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.login = void 0;
+exports.logout = exports.login = void 0;
 
 var _types = require("./types");
 
@@ -37,3 +37,14 @@ var login = function login(userCredentials) {
 };
 
 exports.login = login;
+
+var logout = function logout() {
+  return function (dispatch) {
+    dispatch({
+      type: _types.LOGOUT_USER,
+      payload: {}
+    });
+  };
+};
+
+exports.logout = logout;

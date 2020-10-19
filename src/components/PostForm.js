@@ -47,8 +47,10 @@ class PostForm extends React.Component{
     const newPostData = {
       title: this.state.title,
       content:this.state.content,
+      user: this.props.user,
       user_id: this.props.user_id
     }
+
       this.state.editMode ?
       this.props.updatePost(event, this.props.postData.id, newPostData, localStorage.token) : this.props.createPost( newPostData, localStorage.token)
       this.props.history.push('/posts')

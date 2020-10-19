@@ -1,4 +1,4 @@
-import {LOGIN_USER} from '../actions/types'
+import {LOGIN_USER, LOGOUT_USER} from '../actions/types'
 const initialState = {
   //represents items coming in from action.
 username: "",
@@ -18,6 +18,14 @@ export default function(state = initialState, action) {
         userPosts : action.payload.userPosts,
         userStocks: action.payload.userStocks,
         user_id: action.payload.user_id
+      }
+    case LOGOUT_USER:
+      return {
+        ...state,
+        username: "",
+        userPosts : [],
+        userStocks: [],
+      
       }
     default: 
       return state;

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {connect} from "react-redux"
 
 const Navbar = (props) => {
   return (
@@ -15,6 +16,9 @@ const Navbar = (props) => {
         </div>
       ) : (
         <div className="navbar-list">
+        <Link to="/profile" className="navbar-list">
+          Hello {props.user.username}
+        </Link>{" "}
         <Link to="/stocks" className="navbar-list">
           Stocks
         </Link>{" "}
@@ -36,4 +40,8 @@ const Navbar = (props) => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => {
+  return {user: state.user}
+}
+
+export default connect(mapStateToProps) (Navbar)

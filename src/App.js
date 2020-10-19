@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 // containers
 import PostContainer from './containers/PostContainer'
 import Portfolio from './containers/Portfolio'
+import UserProfile from './containers/UserProfile'
 
 //components
 import SignupForm from './components/SignupForm'
@@ -76,17 +77,17 @@ handleAuthResponse = (response) => {
   if (response.user){
     localStorage.token = response.token
     this.props.login(response)
-    this.props.history.push("/portfolio");
+    this.props.history.push("/portfolio")
   }
   else {
-    this.props.history.push("/login ");
+    this.props.history.push("/login");
   }
 }
 
 handleLogout = () => {
   
   localStorage.clear();
-  this.props.history.push("/login ");
+  this.props.history.push("/login");
 
 }
 
@@ -95,8 +96,14 @@ render() {
   return (
     <div className="App">
       
-    <Header handleLogout={this.handleLogout} handleSearch={this.handleSearch}/>
+    <Header handleLogout={this.handleLogout} />
     <Switch>
+      <Route 
+      path="/profile"
+      render={(routerProps) => {
+            return <UserProfile {...routerProps} />;
+          }}
+        /> 
       <Route 
       path="/login"
       render={(routerProps) => {
@@ -108,7 +115,7 @@ render() {
       render={(...routerProps) => {
       return <SignupForm handleSignUpSubmit={this.handleSignUpSubmit} />;
         }}
-       />
+      />
       <Route path="/posts/new" render={(routerProps) => {
             return <PostForm {...routerProps} token={this.state.token} user={this.state.user}/>;
           }}
