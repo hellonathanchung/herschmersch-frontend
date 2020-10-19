@@ -7,7 +7,6 @@ const initialState = {
 }
 
 export default function(state = initialState, action) {
-  debugger
   switch(action.type) {
     case FETCH_NEWS:
       return {

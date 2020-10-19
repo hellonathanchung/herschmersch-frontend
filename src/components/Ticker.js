@@ -5,6 +5,8 @@ import { fetchStocks } from '../actions/stockActions'
 import { addStockToList } from '../actions/stockListActions'
 import { Button, Modal } from 'semantic-ui-react'
 import StockChart from './StockChart'
+import News from './News'
+
 
 
 
@@ -29,6 +31,7 @@ render () {
       header={ticker.name}
       actions={['Add Stock', { key: 'done', content: 'Done', positive: true }]}>
       <StockChart symbol={ticker.symbol}/>
+      <News name={ticker.name} symbol={ticker.symbol} />
       </ Modal>
     </div>
   )
