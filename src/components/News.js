@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchNews } from "../actions/newsActions";
@@ -7,23 +6,25 @@ import { fetchNews } from "../actions/newsActions";
 class News extends Component {
 
 
-  componentDidMount() {
-    debugger
-    this.props.fetchNews(this.props.symbol)
+componentDidMount() {
+this.props.fetchNews(this.props.symbol)
   }
-  
-  
   render() {
     
+    
     return (
+      <div>
+
       <h1>News</h1>
+      {/* {newsArticles} */}
+      </div>
     )
     }
   }
     const mapStateToProps = (state) => {
       
       return{
-        newsArticles: state.newsArticles
+        newsArticles: state.newsArticles.articles
       }
     }
   export default connect(mapStateToProps, { fetchNews })(News)
