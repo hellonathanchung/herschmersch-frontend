@@ -8,15 +8,18 @@ class News extends Component {
 
 componentDidMount() {
 this.props.fetchNews(this.props.symbol)
+console.log(this.props)
+
   }
+
   render() {
     
-    
+    let testItem = this.props.newsArticle? "hello" : "false"
     return (
       <div>
 
       <h1>News</h1>
-      {/* {newsArticles} */}
+      {testItem}
       </div>
     )
     }
