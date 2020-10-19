@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Modal } from 'semantic-ui-react';
 import { fetchNews } from "../actions/newsActions";
 
 
@@ -8,18 +9,29 @@ class News extends Component {
 
 componentDidMount() {
 this.props.fetchNews(this.props.symbol)
-console.log(this.props)
-
-  }
+}
 
   render() {
+    // while loading news articles
+//     // <div class="ui segment">
+//   <div class="ui active loader"></div>
+//   <p></p>
+//  </div>
     
-    let testItem = this.props.newsArticle? "hello" : "false"
+ const articles = this.props.newsArticles.map(article =>
+  <>
+  <Modal className = "ui header">{article.title}</Modal>
+  <Modal.Content>{article.text}</Modal.Content>
+  <Modal.Description>{article.source_name}</Modal.Description>
+  <p/>
+  </>
+  )
     return (
       <div>
-
       <h1>News</h1>
-      {testItem}
+      <div className="scrolling content">
+      {articles}
+      </div>
       </div>
     )
     }
@@ -27,7 +39,7 @@ console.log(this.props)
     const mapStateToProps = (state) => {
       
       return{
-        newsArticles: state.newsArticles.articles
+        newsArticles: state.newsArticles.newsArticles,
       }
     }
   export default connect(mapStateToProps, { fetchNews })(News)

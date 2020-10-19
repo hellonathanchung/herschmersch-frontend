@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FETCH_NEWS = exports.INITIAL_STOCK_LIST = exports.REMOVE_STOCK_FROM_LIST = exports.ADD_STOCK_TO_LIST = exports.LOGOUT_USER = exports.LOGIN_USER = exports.ADD_LIST_STOCK = exports.FETCH_TICKERS = exports.FETCH_STOCKS = exports.UPDATE_POST = exports.DELETE_POST = exports.NEW_POST = exports.FETCH_POSTS = void 0;
+exports.FETCH_NEWS = exports.LOADING_NEWS = exports.INITIAL_STOCK_LIST = exports.REMOVE_STOCK_FROM_LIST = exports.ADD_STOCK_TO_LIST = exports.LOGOUT_USER = exports.LOGIN_USER = exports.ADD_LIST_STOCK = exports.FETCH_TICKERS = exports.FETCH_STOCKS = exports.UPDATE_POST = exports.DELETE_POST = exports.NEW_POST = exports.FETCH_POSTS = void 0;
 //POST ACTIONS
 var FETCH_POSTS = 'FETCH_POSTS';
 exports.FETCH_POSTS = FETCH_POSTS;
@@ -33,5 +33,7 @@ exports.REMOVE_STOCK_FROM_LIST = REMOVE_STOCK_FROM_LIST;
 var INITIAL_STOCK_LIST = "INITIAL_STOCK_LIST"; //NEWS ACTIONS
 
 exports.INITIAL_STOCK_LIST = INITIAL_STOCK_LIST;
+var LOADING_NEWS = 'LOADING_NEWS';
+exports.LOADING_NEWS = LOADING_NEWS;
 var FETCH_NEWS = 'FETCH_NEWS';
 exports.FETCH_NEWS = FETCH_NEWS;

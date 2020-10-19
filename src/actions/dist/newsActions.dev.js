@@ -15,11 +15,11 @@ var API_KEY = process.env.REACT_APP_STOCK_API_KEY;
 
 var fetchNews = function fetchNews(symbol) {
   return function (dispatch) {
-    console.log(API_KEY); // let date= moment().format('YYYY-MM-DD');
-
-    var URL = "https://stocknewsapi.com/api/v1?tickers=".concat(symbol, "&items=50&token=").concat(API_KEY); // let URL = `http://newsapi.org/v2/everything?q=${symbol}&from=${date}&sortBy=publishedAt&apiKey=${API_KEY}` 
-
-    console.log('fetching news...');
+    console.log(API_KEY);
+    var URL = "https://stocknewsapi.com/api/v1?tickers=".concat(symbol, "&items=50&token=").concat(API_KEY);
+    dispatch({
+      type: _types.LOADING_NEWS
+    });
     fetch(URL).then(function (res) {
       return res.json();
     }).then(function (newsArticles) {
@@ -29,6 +29,8 @@ var fetchNews = function fetchNews(symbol) {
       });
     });
   };
-};
+}; // let date= moment().format('YYYY-MM-DD');
+// let URL = `http://newsapi.org/v2/everything?q=${symbol}&from=${date}&sortBy=publishedAt&apiKey=${API_KEY}` 
+
 
 exports.fetchNews = fetchNews;
