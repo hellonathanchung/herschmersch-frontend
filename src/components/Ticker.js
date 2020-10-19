@@ -27,9 +27,9 @@ render () {
       <Modal
       trigger={<Button red>View More </Button>}
       header={ticker.name}
-      content= {<StockChart symbol={ticker.symbol}/>}
-      actions={['Add Stock', { key: 'done', content: 'Done', positive: true }]}
-    />
+      actions={['Add Stock', { key: 'done', content: 'Done', positive: true }]}>
+      <StockChart symbol={ticker.symbol}/>
+      </ Modal>
     </div>
   )
   return (
