@@ -5,13 +5,17 @@ export const NEW_POST = 'NEW_POST'
 export const DELETE_POST = "DELETE_POST"
 export const UPDATE_POST = "UPDATE_POST"
 
+//stock actions
+export const FETCH_STOCKS = 'FETCH_STOCKS'
 export const FETCH_TICKERS = 'FETCH_TICKERS'
 export const ADD_LIST_STOCK = 'ADD_LIST_STOCK'
 
+//login actions
 export const LOGIN_USER = "LOGIN_USER"
+export const LOGOUT_USER = "LOGOUT_USER"
 
 //STOCK ACTIONS
-export const FETCH_STOCKS = 'FETCH_STOCKS'
+
 
 
 //STOCK_LIST_ACTIONS

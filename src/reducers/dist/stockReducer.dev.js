@@ -15,10 +15,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var initialState = {
   //represents items coming in from action.
-  username: "",
-  userPosts: [],
-  userStocks: [],
-  user_id: 0
+  stocks: [],
+  stockSymbol: "AMZN",
+  stockXValues: [],
+  stockYValues: [] //item represents a single post that we add.
+
 };
 
 function _default() {
@@ -26,19 +27,11 @@ function _default() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case _types.LOGIN_USER:
+    case _types.FETCH_STOCKS:
       return _objectSpread({}, state, {
-        username: action.payload.username,
-        userPosts: action.payload.userPosts,
-        userStocks: action.payload.userStocks,
-        user_id: action.payload.user_id
-      });
-
-    case _types.LOGOUT_USER:
-      return _objectSpread({}, state, {
-        username: "",
-        userPosts: [],
-        userStocks: []
+        stockSymbol: action.payload.symbol,
+        stockXValues: action.payload.stockChartXValues,
+        stockYValues: action.payload.stockChartYValues
       });
 
     default:
