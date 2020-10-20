@@ -22,7 +22,7 @@ class Portfolio extends Component {
           trigger={<Button primary>View More </Button>}
           header={userStock.stockInformation.name}
           content= {<StockChart symbol={userStock.stockInformation.symbol}/>}
-          actions={['Add Stock', { key: 'done', content: 'Done', positive: true }]}/>
+          />
         </div>)
 
   return (

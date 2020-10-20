@@ -38,7 +38,6 @@ function _default() {
       });
 
     case _types.FETCH_NEWS:
-      debugger;
       return _objectSpread({}, state, {
         newsArticles: action.payload,
         loading: false

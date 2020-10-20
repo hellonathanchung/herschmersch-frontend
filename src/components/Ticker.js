@@ -52,17 +52,16 @@ render () {
       
     <h1>Tickers</h1>
       {this.props.loading ? 
-
         <div className="ui segment centered">
         <div className="ui active inverted dimmer">
         <div className="ui text loader">Fetching Stocks!</div>
         </div>
         </div>
         : 
-  null}
-    <div className="ui cards">
-    {tickerItems}
-    </div>
+        null}
+        <div className="ui cards">
+        {tickerItems}
+        </div>
     </div>
     )
   
