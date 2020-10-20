@@ -11,7 +11,7 @@ export default function(state = initialState, action) {
     case LOADING_NEWS:
       return {
         ...state,
-        newsArticles: [...state.newsArticles],
+        newsArticles: action.payload,
         loading:true
       }
     case FETCH_NEWS:

@@ -17,9 +17,6 @@ var fetchNews = function fetchNews(symbol) {
   return function (dispatch) {
     console.log(API_KEY);
     var URL = "https://stocknewsapi.com/api/v1?tickers=".concat(symbol, "&items=50&token=").concat(API_KEY);
-    dispatch({
-      type: _types.LOADING_NEWS
-    });
     fetch(URL).then(function (res) {
       return res.json();
     }).then(function (newsArticles) {

@@ -39,9 +39,7 @@ render () {
           <News name={ticker.name} symbol={ticker.symbol} />
         </Modal.Content>
         <Modal.Actions>
-          <Button onClick={(e)=> {
-        this.props.addStockToList(e, this.props.ticker.name, this.props.ticker.symbol);
-        }}> Add Stock</Button>
+          <Button > Add Stock</Button>
         </Modal.Actions>
       </ Modal>
     </div>
@@ -63,7 +61,8 @@ render () {
 
 const mapStateToProps = (state) => {
         return {
-          tickers: state.tickers.tickers
+          tickers: state.tickers.tickers,
+          loading: state.tickers.loading
         }
 }
 

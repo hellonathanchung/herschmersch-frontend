@@ -23,7 +23,8 @@ this.props.fetchNews(this.props.symbol)
   <Modal className = "ui header">{article.title}</Modal>
   <Modal.Content>{article.text}</Modal.Content>
   <Modal.Description>{article.source_name}</Modal.Description>
-  <p/>
+  <div class="ui divider"></div>
+
   </>
   )
     return (
@@ -40,6 +41,7 @@ this.props.fetchNews(this.props.symbol)
       
       return{
         newsArticles: state.newsArticles.newsArticles,
+        loading: state.newsArticles.loading
       }
     }
   export default connect(mapStateToProps, { fetchNews })(News)
