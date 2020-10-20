@@ -14,8 +14,6 @@ render() {
 
 return (
     <div >
-        <AddStockListForm/>
-
         <h1 > <Ticker/></h1>
         <p></p>
         <p></p>

@@ -5,8 +5,7 @@ import {fetchNews } from '../actions/newsActions'
 import { fetchStocks } from '../actions/stockActions'
 import { addStockToList } from '../actions/stockListActions'
 import { Button, Modal } from 'semantic-ui-react'
-import PostForm from './PostForm'
-
+import AddStockListForm from './AddStockListForm'
 import StockChart from './StockChart'
 import News from './News'
 
@@ -44,7 +43,7 @@ render () {
         <Modal.Actions>
           <Modal trigger={<Button primary> Add Stock </Button>} >
             <Modal.Content>
-            <PostForm/>
+            <AddStockListForm/>
 
             </Modal.Content>
           </Modal>

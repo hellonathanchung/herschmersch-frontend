@@ -22,14 +22,19 @@ this.props.fetchNews(this.props.symbol)
   <>
   <Modal className = "ui header">{article.title}</Modal>
   <Modal.Description>
-    <h1>{article.source_name}</h1>
-    <p> {article.text} </p>
+    
+
     </Modal.Description>
   <Modal.Content>
-    <div>
-      <div>
-      <img className="ui small image" src={article.image_url}/>
-
+    <div className="ui two column centered grid">
+      <div className="row">
+        <div className="column">
+          <img className="ui small image" src={article.image_url}/>
+      </div>
+        <div className="column">
+          <h1>{article.source_name}</h1>
+          {article.text} 
+        </div>
       </div>
       <div>
 

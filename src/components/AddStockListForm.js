@@ -45,10 +45,9 @@ class AddStockListForm extends React.Component{
       >
         <div className="ui form">
           <div className="field">
-          <label>Stock Name</label>
-          <input name="stockName" type="text" placeholder={this.state.title} />
-          <label>Content</label >
-          <textarea  placeholder={this.state.content} name="content"/>
+          <h1><label>{this.props.stockName}</label></h1>
+          <label> Stock Price</label >
+          <input  placeholder={this.state.content} name="initialPrice"/>
     <br/>
     <Button className="ui-button">Submit</Button>
     </div>
@@ -61,5 +60,10 @@ class AddStockListForm extends React.Component{
 }
 
 
-
-export default connect( null, {addStockToList})(withRouter(AddStockListForm))
+const mapStateToProps = (state) => {
+  return {
+    stockName : state.stocks.stockName,
+    stockSymbol: state.stocks.stockSymbol
+  }
+}
+export default connect( mapStateToProps, {addStockToList})(withRouter(AddStockListForm))
