@@ -25,7 +25,6 @@ export default function(state = initialState, action) {
         postItems: [...state.postItems.filter(postItem => postItem.id !== parseInt(action.payload))]
       }
       case UPDATE_POST:
-        debugger
         let updatedPostItems = [...state.postItems.filter(postItem => postItem.id !== parseInt(action.payload.id)), action.payload]
       return {
         ...state,

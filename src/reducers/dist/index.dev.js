@@ -17,6 +17,8 @@ var _stockReducer = _interopRequireDefault(require("./stockReducer"));
 
 var _stockListReducer = _interopRequireDefault(require("./stockListReducer"));
 
+var _newsReducer = _interopRequireDefault(require("./newsReducer"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = (0, _redux.combineReducers)({
@@ -24,7 +26,8 @@ var _default = (0, _redux.combineReducers)({
   user: _loginReducer["default"],
   tickers: _tickerReducer["default"],
   stocks: _stockReducer["default"],
-  stockList: _stockListReducer["default"]
+  stockList: _stockListReducer["default"],
+  newsArticles: _newsReducer["default"]
 });
 
 exports["default"] = _default;

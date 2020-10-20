@@ -12,6 +12,9 @@ var API_KEY = process.env.REACT_APP_MARKETSTACK_API_KEY;
 var fetchTickers = function fetchTickers() {
   return function (dispatch) {
     console.log('fetching tickers...');
+    dispatch({
+      type: _types.LOADING_TICKERS
+    });
     fetch("http://api.marketstack.com/v1/tickers?access_key=".concat(API_KEY)).then(function (res) {
       return res.json();
     }).then(function (tickers) {

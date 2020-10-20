@@ -1,405 +1,434 @@
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px;
-  background: #5497da;
-  color: white;
-  font-size: 80px;
-  font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+    background: #5497da;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
 }
 
 .header-image-cropper {
-  width: 200px;
-  height: 200px;
-  /* position: relative; */
-  overflow: hidden;
-  border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    /* position: relative; */
+    overflow: hidden;
+    border-radius: 50%;
 }
+
 .header-pic {
-  display: inline;
-  margin: 0 auto;
-  margin-left: -25%;
-  height: 100%;
-  width: auto;
+    display: inline;
+    margin: 0 auto;
+    margin-left: -25%;
+    height: 100%;
+    width: auto;
 }
 
 .navbar {
-  position: relative;
-  background-color: #333;
-  width: 100%;
-  overflow: hidden;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 20px 20px;
+    position: relative;
+    background-color: #333;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 20px;
 }
 
 .navbar-list a {
-  height: 100%;
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+    height: 100%;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
 }
+
 .navbar-list a:hover {
-  background-color: #ddd;
-  color: black;
-  cursor: pointer;
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
 }
+
 .navbar-list .search-container {
-  float: right;
+    float: right;
 }
 
 .search-container input[type="text"] {
-  background-color: white;
-  background-image: url(./images/search-icon.png);
-  background-position: 10px;
-  background-repeat: no-repeat;
-  padding-left: 40px;
-  color: grey;
-  margin-right: 20px;
-  float: right;
-  padding: 6px;
-  border: none;
-  margin-top: 7px;
-  font-size: 17px;
-  border-radius: 10px;
+    background-color: white;
+    background-image: url(./images/search-icon.png);
+    background-position: 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+    color: grey;
+    margin-right: 20px;
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 7px;
+    font-size: 17px;
+    border-radius: 10px;
 }
 
 .navbar-list-items {
-  float: left;
-  padding: 6px;
-  border: none;
-  margin-top: 1px;
-  font-size: 17px;
-  text-align: center;
-  align-content: center;
+    float: left;
+    padding: 6px;
+    border: none;
+    margin-top: 1px;
+    font-size: 17px;
+    text-align: center;
+    align-content: center;
 }
+
 .login-form {
-  position: center;
-  float: right;
-  padding: 6px 10px;
-  margin-top: 1px;
-  margin-right: 16px;
-  background: rgb(255, 255, 255);
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  border-radius: px;
+    position: center;
+    float: right;
+    padding: 6px 10px;
+    margin-top: 1px;
+    margin-right: 16px;
+    background: rgb(255, 255, 255);
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: px;
 }
 
 #service-collection {
-  margin: 2rem;
+    margin: 2rem;
 }
+
 .service-container {
-  margin: 2rem 1rem;
-  padding: 20px 20px;
+    margin: 2rem 1rem;
+    padding: 20px 20px;
 }
 
 .specs-container {
-  margin: 3rem;
+    margin: 3rem;
 }
+
 .service-specs {
-  /* cursor: pointer; */
-  background: #eeeeee;
-  border-radius: 10px;
-  padding: 8px;
+    /* cursor: pointer; */
+    background: #eeeeee;
+    border-radius: 10px;
+    padding: 8px;
 }
+
 .service-specs .closing-spec {
-  border-radius: 8px;
-  padding: 8px;
-  float: right;
-  cursor: pointer;
-  color: red;
-  border: none;
-  font-size: 16px;
+    border-radius: 8px;
+    padding: 8px;
+    float: right;
+    cursor: pointer;
+    color: red;
+    border: none;
+    font-size: 16px;
 }
+
 .spec-service_img {
-  margin-top: 1rem;
-  justify-self: center;
-  border-radius: 10px;
+    margin-top: 1rem;
+    justify-self: center;
+    border-radius: 10px;
 }
 
 .service-specs .name {
-  font-size: 35px;
-  text-align: center;
-  padding: 15px;
-  margin-top: 2rem;
-  font-weight: bolder;
+    font-size: 35px;
+    text-align: center;
+    padding: 15px;
+    margin-top: 2rem;
+    font-weight: bolder;
 }
+
 .service-specs .request-button {
-  background: #5497da;
-  color: white;
-  border-radius: 5px;
-  font-size: 20px;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
-  padding: 8px;
-  margin: 20px;
+    background: #5497da;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    padding: 8px;
+    margin: 20px;
 }
 
 .your-service {
-  font-size: 25px;
-  padding-top: 10px;
-  color: red;
+    font-size: 25px;
+    padding-top: 10px;
+    color: red;
 }
 
 .map-container {
-  max-width: 75%;
-  margin: auto;
-  margin-top: 50px;
+    max-width: 75%;
+    margin: auto;
+    margin-top: 50px;
 }
 
 .service-content .description {
-  position: relative;
-  font-size: 20px;
-  padding: 6px;
-  display: block;
+    position: relative;
+    font-size: 20px;
+    padding: 6px;
+    display: block;
 }
+
 .service-content .description div {
-  position: relative;
-  font-size: 24px;
-  padding: 6px;
-  display: block;
+    position: relative;
+    font-size: 24px;
+    padding: 6px;
+    display: block;
 }
 
 .card {
-  cursor: pointer;
-  /* changes pointer for clickable objects */
-  text-align: center;
-  border-radius: 10px;
-  border-radius: 15px;
-  background: #eeeeee;
-  padding: 2rem;
-  width: 15rem;
-  height: max-content;
-  display: inline-grid;
-  margin: 1rem 2rem;
-  color: #5497da;
+    cursor: pointer;
+    /* changes pointer for clickable objects */
+    text-align: center;
+    border-radius: 10px;
+    border-radius: 15px;
+    background: #eeeeee;
+    padding: 2rem;
+    width: 15rem;
+    height: max-content;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    color: #5497da;
 }
 
 .card .service_img {
-  justify-self: center;
-  height: 12rem;
-  width: auto;
-  border-radius: 10px;
+    justify-self: center;
+    height: 12rem;
+    width: auto;
+    border-radius: 10px;
 }
+
 .card .service-content {
-  /* background:#EDB668; */
-  word-wrap: break-word;
+    /* background:#EDB668; */
+    word-wrap: break-word;
 }
+
 .card .name {
-  font-size: 20px;
-  height: auto;
-  text-align: center;
-  padding: 10px;
-  font-weight: bolder;
+    font-size: 20px;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    font-weight: bolder;
 }
+
 .card .service-content .description {
-  position: relative;
-  font-size: 15px;
-  padding: 6px;
-  display: block;
+    position: relative;
+    font-size: 15px;
+    padding: 6px;
+    display: block;
 }
+
 .service-value {
-  font-size: 20px;
-  padding: 5px 10px;
+    font-size: 20px;
+    padding: 5px 10px;
 }
+
 .extra-content {
-  background: #daa520;
-  border-radius: 10px;
-  padding: 10px;
-  text-decoration: none;
+    background: #daa520;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
 }
+
 .extra-content-li {
-  list-style-type: none;
+    list-style-type: none;
 }
+
 .request-card {
-  text-align: left;
+    text-align: left;
 }
+
 .request-card h3 {
-  color: #1a591f;
+    color: #1a591f;
 }
+
 .service-name {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: left;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
 }
+
 .request-message {
-  font-size: 15px;
-  text-align: left;
+    font-size: 15px;
+    text-align: left;
 }
+
 .request-value {
-  text-align: center;
-  font-size: 25px;
+    text-align: center;
+    font-size: 25px;
 }
+
 .button-approve-request {
-  background: #1a591f;
-  color: white;
-  border-radius: 5px;
-  font-size: 15px;
-  border: none;
-  margin: 5px;
-  padding: 8px;
-  cursor: pointer;
+    background: #1a591f;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    margin: 5px;
+    padding: 8px;
+    cursor: pointer;
 }
+
 .button-deny-request {
-  background: #8e0f01;
-  color: white;
-  margin: 5px;
-  border-radius: 5px;
-  font-size: 15px;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
+    background: #8e0f01;
+    color: white;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
 }
+
 .request-approved {
-  color: #1a591f;
-  font-size: 20px;
+    color: #1a591f;
+    font-size: 20px;
 }
+
 .request-denied {
-  color: #8e0f01;
-  font-size: 20px;
+    color: #8e0f01;
+    font-size: 20px;
 }
+
 .two-column-grid {
-  display: flex;
-  width: 75%;
-  margin: 0 auto;
-  background: #5497da;
-  padding: 10px;
+    display: flex;
+    width: 75%;
+    margin: 0 auto;
+    background: #5497da;
+    padding: 10px;
 }
+
 .register-form {
-  background: #5497da;
-  width: 75%;
-  margin: 0 auto;
-  border-radius: 10px;
+    background: #5497da;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 10px;
 }
+
 .form-container {
-  padding: 50px;
+    padding: 50px;
 }
 
 .row {
-  flex: 50%;
+    flex: 50%;
 }
 
 .row .edit-profile-button {
-  padding: 6px 10px;
-  margin-top: 1px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  border-radius: 15px;
+    padding: 6px 10px;
+    margin-top: 1px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
 .row .delete-profile-button {
-  padding: 6px 10px;
-  margin-top: 1px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  border-radius: 15px;
+    padding: 6px 10px;
+    margin-top: 1px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
 }
 
 .profile-page-image {
-  width: 50%;
-  float: right;
+    width: 50%;
+    float: right;
 }
 
 .profile-form-row {
-  padding-top: 16px;
-  flex: 100%;
-  width: auto;
-  color: white;
-
-  flex-flow: row wrap;
-  display: flex;
-  align-items: center;
-  padding-top: 16px;
-  width: auto;
-  color: white;
-  margin: 0 auto;
-  background: #5497da;
-  width: 50%;
-  padding: 16px;
-  /* display: block; */
-  position: relative;
-  color: white;
+    padding-top: 16px;
+    flex: 100%;
+    width: auto;
+    color: white;
+    flex-flow: row wrap;
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+    width: auto;
+    color: white;
+    margin: 0 auto;
+    background: #5497da;
+    width: 50%;
+    padding: 16px;
+    /* display: block; */
+    position: relative;
+    color: white;
 }
 
 .user-profile-information {
-  font-size: 20;
-  color: white;
-  position: left;
-  
+    font-size: 20;
+    color: white;
+    position: left;
 }
 
 .profile-form-row-center {
-  margin: 0 auto;
-  background: #4285F4;
-  width: 50%;
-  padding: 16px;
-  display: block;
-  position: relative;
-  color: white;
-  border-radius: 20px;
+    margin: 0 auto;
+    background: #4285F4;
+    width: 50%;
+    padding: 16px;
+    display: block;
+    position: relative;
+    color: white;
+    border-radius: 20px;
 }
 
 .one-column-grid button {
-  background: #4285F4;
-  color: white;
-  border-radius: 20px;
-  font-size: 20px;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
+    background: #4285F4;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
 }
 
 .profile-form-row-center input[type="text"],
 .profile-form-row-center input[type="password"],
 .profile-form-row-center input[type="number"] {
-  margin: 0 auto;
-  width: 90%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #5497da;
-  border-radius: 15px;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #5497da;
+    border-radius: 15px;
 }
 
 .profile-form-row input[type="text"],
 .profile-form-row input[type="number"],
 .profile-form-row input[type="password"],
 .new-service-form textarea {
-  margin: 0 auto;
-  width: 90%;
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }
 
 label {
-  margin-bottom: 10px;
-  display: block;
+    margin-bottom: 10px;
+    display: block;
 }
 
 .submit-button {
-  background: white;
-  padding: 15px;
+    background: white;
+    padding: 15px;
 }
+
 .btn {
-  background: #5497da;
-  color: white;
-  border-radius: 5px;
-  font-size: 20px;
-  border: none;
-  padding: 12px;
-  cursor: pointer;
+    background: #5497da;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
 }
+
+
 /* 
 .btn:hover {
   background-color: white;
@@ -411,32 +440,32 @@ label {
 
 .signup-link:link,
 .signup-link:visited {
-  text-decoration: none;
-  color: black;
+    text-decoration: none;
+    color: black;
 }
+
 .signup-link:hover {
-  color: #daa520;
+    color: #daa520;
 }
 
 @media screen and (max-width: 600px) {
-  .navbar,
-  .navbar-list a,
-  .navbar-list input[type="text"] .navbar-list .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  }
-  .navbar-list input[type="text"] {
-    border: 1px solid #ccc;
-  }
+    .navbar,
+    .navbar-list a,
+    .navbar-list input[type="text"] .navbar-list .search-container button {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+    .navbar-list input[type="text"] {
+        border: 1px solid #ccc;
+    }
 }
 
-
 * {
-  font-family: "Helvetica";
-  text-align: center;
-  outline: none;
+    font-family: "Helvetica";
+    text-align: center;
+    outline: none;
 }

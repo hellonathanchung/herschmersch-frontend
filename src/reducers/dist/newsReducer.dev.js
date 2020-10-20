@@ -22,11 +22,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var initialState = {
-  //represents items coming in from action.
-  tickers: [],
-  ticker: {},
-  loading: false //item represents a single post that we add.
-
+  newsArticles: [],
+  loading: false
 };
 
 function _default() {
@@ -34,21 +31,16 @@ function _default() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case _types.LOADING_TICKERS:
+    case _types.LOADING_NEWS:
       return _objectSpread({}, state, {
-        tickers: _toConsumableArray(state.tickers),
+        newsArticles: _toConsumableArray(state.newsArticles),
         loading: true
       });
 
-    case _types.FETCH_TICKERS:
+    case _types.FETCH_NEWS:
+      debugger;
       return _objectSpread({}, state, {
-        tickers: action.payload,
-        loading: false
-      });
-
-    case _types.ADD_LIST_STOCK:
-      return _objectSpread({}, state, {
-        ticker: action.payload,
+        newsArticles: action.payload,
         loading: false
       });
 
