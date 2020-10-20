@@ -11,11 +11,13 @@ export default function(state = initialState, action) {
     case LOADING_NEWS:
       return {
         ...state,
-        newsArticles: action.payload,
+        newsArticles: [...state.newsArticles],
         loading:true
       }
     case FETCH_NEWS:
+      debugger
       return {
+        ...state,
         newsArticles: action.payload,
         loading: false
       }
