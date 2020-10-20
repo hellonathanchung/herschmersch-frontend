@@ -16,9 +16,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var initialState = {
   //represents items coming in from action.
   stocks: [],
+  stockName: "Amazon",
   stockSymbol: "AMZN",
   stockXValues: [],
-  stockYValues: [] //item represents a single post that we add.
+  stockYValues: [],
+  currentCost: [] //item represents a single post that we add.
 
 };
 
@@ -30,6 +32,7 @@ function _default() {
     case _types.FETCH_STOCKS:
       return _objectSpread({}, state, {
         stockSymbol: action.payload.symbol,
+        stockName: action.payload.name,
         stockXValues: action.payload.stockChartXValues,
         stockYValues: action.payload.stockChartYValues
       });

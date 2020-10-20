@@ -12,8 +12,6 @@ class StockChart extends Component {
     this.props.fetchStocks(newSymbol)
   }
   render () {
-   
-
     let xValues=this.props.stockXValues
     let readableXValues = xValues.map(date => (moment(date).format("MMM Do YY")))
     let yValues=this.props.stockYValues

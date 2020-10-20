@@ -21,9 +21,24 @@ this.props.fetchNews(this.props.symbol)
  const articles = this.props.newsArticles.map(article =>
   <>
   <Modal className = "ui header">{article.title}</Modal>
-  <Modal.Content>{article.text}</Modal.Content>
-  <Modal.Description>{article.source_name}</Modal.Description>
-  <div className="ui divider"></div>
+  <Modal.Description>
+    <h1>{article.source_name}</h1>
+    <p> {article.text} </p>
+    </Modal.Description>
+  <Modal.Content>
+    <div>
+      <div>
+      <img className="ui small image" src={article.image_url}/>
+
+      </div>
+      <div>
+
+      </div>
+    </div>
+  </Modal.Content>
+  <div className="ui divider">
+    
+  </div>
 
   </>
   )

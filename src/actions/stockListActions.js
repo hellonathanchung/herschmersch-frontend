@@ -4,6 +4,7 @@ import {ADD_STOCK_TO_LIST, REMOVE_STOCK_FROM_LIST} from './types'
 export const addStockToList = (e,name, symbol) => dispatch =>  {
   console.log('dispatch to list')
   console.log(name, symbol)
+  debugger
 
   let stockListInformation = {
     name: name,

@@ -11,6 +11,7 @@ var addStockToList = function addStockToList(e, name, symbol) {
   return function (dispatch) {
     console.log('dispatch to list');
     console.log(name, symbol);
+    debugger;
     var stockListInformation = {
       name: name,
       symbol: symbol,

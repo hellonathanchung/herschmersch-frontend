@@ -9,12 +9,13 @@ var _types = require("./types");
 
 var API_KEY = process.env.REACT_APP_MARKETSTACK_API_KEY;
 
-var fetchStocks = function fetchStocks(newSymbol) {
+var fetchStocks = function fetchStocks(newSymbol, stockName) {
   return function (dispatch) {
     var stockChartX = [];
     var stockChartY = [];
     var revStockChartX = stockChartX.reverse();
     var revStockChartY = stockChartY.reverse();
+    var currentCost = 0;
     var stockTicker = newSymbol;
     var URL = "http://api.marketstack.com/v1/eod?access_key=".concat(API_KEY, "&symbols=").concat(stockTicker);
     fetch(URL).then(function (res) {
@@ -32,6 +33,7 @@ var fetchStocks = function fetchStocks(newSymbol) {
     });
     var stockInformation = {
       symbol: newSymbol,
+      name: stockName,
       stockChartXValues: revStockChartX,
       stockChartYValues: revStockChartY
     };
