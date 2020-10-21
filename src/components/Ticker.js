@@ -29,16 +29,15 @@ render () {
         this.props.fetchNews(ticker.symbol)}}>
         <div className="description">{ticker.name}</div>
         <div div  className="description">{ticker.symbol}</div>
-      {/* <Button secondary onClick={(e)=> {
-        this.props.addStockToList(e, ticker.name, ticker.symbol);
-        }} className="ui button"> Add Stock </Button> */}
       <Modal primary 
         trigger={<Button red>View More</Button>}
         header={ticker.name}
         >
         <StockChart name={ticker.name} symbol={ticker.symbol}/>
         <Modal.Actions>
-          <Modal centered trigger={<Button primary> Add Stock </Button>} >
+          <Modal
+          size="small"
+          trigger={<Button primary> Add Stock </Button>} >
             <Modal.Content>
             <AddStockListForm/>
 
@@ -64,11 +63,14 @@ render () {
         <p/>
         </div>
         </div>
-              </div>
+        </div>
         : 
         null}
+        <div className = "ui grid">
+
         <div className="ui cards">
         {tickerItems}
+        </div>
         </div>
     </div>
     )

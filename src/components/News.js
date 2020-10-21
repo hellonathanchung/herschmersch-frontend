@@ -13,13 +13,7 @@ this.props.fetchNews(this.props.symbol)
 }
 
   render() {
-    // while loading news articles
-//     // <div class="ui segment">
-//   <div class="ui active loader"></div>
-//   <p></p>
-//  </div>
-    
- const articles = this.props.newsArticles.map(article =>
+  const articles = this.props.newsArticles.map(article =>
   <>
   <Modal className = "ui header">{article.title}</Modal>
   <Modal.Description>

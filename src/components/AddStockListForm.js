@@ -36,14 +36,13 @@ class AddStockListForm extends React.Component{
 
     return (
       <div>
-      <h2>Add a Stock</h2>
-      <h2> {`Current Price: $ ${this.props.currentPrice}`}</h2>
-
-      <div className="ui one column stackable center aligned page grid">
-      <form className="column twelve wide"
-      onChange={(e) => this.handleFormChange(e)}
-      onSubmit={(e) => this.handleListStockSubmit(e)}
-      >
+        <h2>Add a Stock</h2>
+        <h2> {`Current Price: $ ${this.props.currentPrice}`}</h2>
+        <div div className="ui one column stackable center aligned page grid">
+        <form className="column twelve wide"
+        onChange={(e) => this.handleFormChange(e)}
+        onSubmit={(e) => this.handleListStockSubmit(e)}
+        >
         <div className="ui form">
           <div className="field">
           <h1><label>{this.props.stockName}</label></h1>
@@ -52,7 +51,7 @@ class AddStockListForm extends React.Component{
           <label> Shares </label >
           <input type="number" placeholder={this.state.content} name="shares"/>
     <br/>
-    <Button className="ui-button">Submit</Button>
+    <Button approve className="ui-button">Submit</Button>
     </div>
     </div>
     </form>
