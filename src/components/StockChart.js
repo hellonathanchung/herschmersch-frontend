@@ -9,19 +9,21 @@ class StockChart extends Component {
 
   componentDidMount() {
     let newSymbol = this.props.symbol
-    this.props.fetchStocks(newSymbol)
+    let companyName = this.props.name
+    this.props.fetchStocks(newSymbol, companyName)
   }
   render () {
-   
-
     let xValues=this.props.stockXValues
     let readableXValues = xValues.map(date => (moment(date).format("MMM Do YY")))
     let yValues=this.props.stockYValues
     let company = this.props.stockSymbol
+    let companyName = this.props.stockName
+    let currentPrice= this.props.currentPrice
 
     return (
       <div>
-      {company}
+      <h1>{companyName}</h1>
+      <h1>{company}</h1>
       <ReactFrappeChart
       type="line"
       colors={["#21ba45"]}
@@ -30,8 +32,9 @@ class StockChart extends Component {
       data={{
         labels: readableXValues,
         datasets: [{ values: yValues }],
-      }}
+      }}s
       />
+      <h2>{`Current Price: $${currentPrice}`}</h2>
       </div>
       );
     }
@@ -41,7 +44,9 @@ const mapStateToProps = (state) => {
   return {
     stockXValues: state.stocks.stockXValues.reverse(),
     stockYValues: state.stocks.stockYValues.reverse(),
-    stockSymbol: state.stocks.stockSymbol
+    stockName: state.stocks.stockName,
+    stockSymbol: state.stocks.stockSymbol,
+    currentPrice: state.stocks.currentPrice
   }
   }
 

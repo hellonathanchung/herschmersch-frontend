@@ -6,7 +6,6 @@ class Signup extends React.Component {
     newUser: {
 
       username: "",
-      imageUrl: "",
       password: "",
       password_confirmation: "",
     },
@@ -40,12 +39,6 @@ class Signup extends React.Component {
                 value={this.state.username}
               />
               <input
-                type="text"
-                name="imageUrl"
-                placeholder="Image URL"
-                value={this.state.imageUrl}
-              />
-              <input
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -54,7 +47,7 @@ class Signup extends React.Component {
               <input
                 type="password"
                 name="password_confirmation"
-                placeholder="password Confirmation"
+                placeholder="Password Confirmation"
                 value={this.state.password_confirmation}
               />
             </div>

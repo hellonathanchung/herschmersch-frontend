@@ -7,16 +7,19 @@ exports.removeStockFromList = exports.addStockToList = void 0;
 
 var _types = require("./types");
 
-var addStockToList = function addStockToList(e, name, symbol) {
+var addStockToList = function addStockToList(event, stockListData) {
   return function (dispatch) {
-    console.log('dispatch to list');
-    console.log(name, symbol);
+    console.log(stockListData);
     var stockListInformation = {
-      name: name,
-      symbol: symbol,
+      name: stockListData.name,
+      symbol: stockListData.symbol,
       list_id: 17,
-      initial_cost: 40
+      initialCost: stockListData.initialCost,
+      shares: stockListData.shares
     };
+    dispatch({
+      type: _types.LOADING_STOCK_LIST
+    });
     fetch('http://localhost:3000/api/v1/list_stocks', {
       method: 'POST',
       headers: {
@@ -26,10 +29,10 @@ var addStockToList = function addStockToList(e, name, symbol) {
       body: JSON.stringify(stockListInformation)
     }).then(function (res) {
       return res.json();
-    }).then(function (post) {
+    }).then(function (stockData) {
       return dispatch({
         type: _types.ADD_STOCK_TO_LIST,
-        payload: stockListInformation
+        payload: stockData
       });
     });
   };
@@ -39,6 +42,9 @@ exports.addStockToList = addStockToList;
 
 var removeStockFromList = function removeStockFromList(e, stockId) {
   return function (dispatch) {
+    dispatch({
+      type: _types.LOADING_STOCK_LIST
+    });
     fetch("http://localhost:3000/api/v1/list_stocks/".concat(stockId), {
       method: 'DELETE',
       headers: {

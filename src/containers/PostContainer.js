@@ -28,7 +28,10 @@ state = {
     const postItems = this.props.posts.map(post => 
       <div className="ui raised very padded text container segment" key={post.id}>
         <h2 className="ui header">{post.title}</h2>
-        <h4 className="ui header"> Post by: {post.user.username}</h4>
+        <h4> Post by: {post.user.username}</h4>
+        <p/>
+        <p/>
+        
         <p>{post.content}</p>
         <Modal
       trigger={<Button red> Edit Post </Button>}

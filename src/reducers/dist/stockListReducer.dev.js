@@ -22,9 +22,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var initialState = {
-  //represents items coming in from action.
-  stockList: [] //item represents a single post that we add.
-
+  stockList: [],
+  loading: false
 };
 
 function _default() {
@@ -32,21 +31,31 @@ function _default() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
+    case _types.LOADING_STOCK_LIST:
+      return _objectSpread({}, state, {
+        stockList: _toConsumableArray(state.stockList),
+        loading: true
+      });
+
     case _types.INITIAL_STOCK_LIST:
       return _objectSpread({}, state, {
-        stockList: action.payload
+        stockList: action.payload,
+        loading: false
       });
 
     case _types.ADD_STOCK_TO_LIST:
+      debugger;
       return _objectSpread({}, state, {
-        stockList: [].concat(_toConsumableArray(state.stockList), [action.payload])
+        stockList: [].concat(_toConsumableArray(state.stockList), [action.payload]),
+        loading: false
       });
 
     case _types.REMOVE_STOCK_FROM_LIST:
       return _objectSpread({}, state, {
         stockList: _toConsumableArray(state.stockList.filter(function (stock) {
           return stock.id !== parseInt(action.payload);
-        }))
+        })),
+        loading: false
       });
 
     default:

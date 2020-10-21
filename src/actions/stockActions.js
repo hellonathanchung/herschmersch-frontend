@@ -1,14 +1,15 @@
-import {FETCH_STOCKS} from './types'
+import {FETCH_STOCKS, LOADING_STOCKS} from './types'
 let API_KEY = process.env.REACT_APP_MARKETSTACK_API_KEY
 
-export const fetchStocks = (newSymbol) => dispatch =>  {
+export const fetchStocks = (newSymbol, stockName) => dispatch =>  {
   let stockChartX = []
   let stockChartY = []
   let revStockChartX = stockChartX.reverse()
   let revStockChartY = stockChartY.reverse()
-
   let stockTicker = newSymbol
+  
   let URL = `http://api.marketstack.com/v1/eod?access_key=${API_KEY}&symbols=${stockTicker}`
+  dispatch({type: LOADING_STOCKS})
   fetch(URL)
   .then(res => res.json())
   .then( function(stockData) {console.log(stockData);
@@ -23,8 +24,9 @@ export const fetchStocks = (newSymbol) => dispatch =>  {
   )
   const stockInformation = {
     symbol: newSymbol,
+    name: stockName,
     stockChartXValues: revStockChartX,
-    stockChartYValues: revStockChartY
+    stockChartYValues: revStockChartY,
   }
   }
 
