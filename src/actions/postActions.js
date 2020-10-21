@@ -31,7 +31,7 @@ export const createPost = (postData, token) => dispatch => {
 console.log("Post has been created")
 }
 export const updatePost = (event, postId, postData, token) => dispatch => {
-  
+  debugger
 
   console.log('updating a post...')
   fetch(`http://localhost:3000/api/v1/posts/${postId}`, {

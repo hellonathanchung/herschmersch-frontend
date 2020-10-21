@@ -49,6 +49,7 @@ exports.createPost = createPost;
 
 var updatePost = function updatePost(event, postId, postData, token) {
   return function (dispatch) {
+    debugger;
     console.log('updating a post...');
     fetch("http://localhost:3000/api/v1/posts/".concat(postId), {
       method: 'PATCH',

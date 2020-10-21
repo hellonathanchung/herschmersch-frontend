@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { removeStockFromList } from '../actions/stockListActions'
 import { Button, Modal } from 'semantic-ui-react'
 import StockChart from '../components/StockChart'
+import News from '../components/News'
 import Loading from '../components/Loading'
 
 
@@ -11,10 +12,6 @@ import Loading from '../components/Loading'
 
 class Portfolio extends Component {
 
-  // function totalEquity = () => {
-  //   const equity =  this.props.stockList.map(stock => stock.initialCost)
-
-  // }
   render() {
     const portfolioStocks = this.props.stockList.map(userStock =>
       <div className="ui raised link card" key={userStock.id}>
@@ -31,10 +28,14 @@ class Portfolio extends Component {
           >
           <Modal.Content>
           {<StockChart stockName={userStock.stockInformation.name}symbol={userStock.stockInformation.symbol}/>}
+          
           <h4 className="description">Shares: {userStock.shares}</h4>
           <h4 className="description">Initial Cost: ${userStock.initial_cost}</h4>
           {/* <h4 style={{color: {total gain > 0 ? green : red}}} className="description">Total Gain/Loss: {((this.props.currentPrice - userStock.initial_cost) * userStock.shares).toFixed(2)}</h4> */}
           </Modal.Content>
+          <Modal.Content image scrolling>
+          <News name={userStock.stockInformation.name} symbol={userStock.stockInformation.symbol} />
+        </Modal.Content>
           </Modal>
         </div>)
 

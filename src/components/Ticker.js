@@ -20,6 +20,7 @@ class Ticker extends Component {
     }
     }
 
+    
 
 render () {
 
@@ -37,10 +38,10 @@ render () {
         <Modal.Actions>
           <Modal
           size="small"
-          trigger={<Button primary> Add Stock </Button>} >
+          trigger={<Button primary> Add Stock </Button>} 
+          >
             <Modal.Content>
             <AddStockListForm/>
-
             </Modal.Content>
           </Modal>
         </Modal.Actions>
