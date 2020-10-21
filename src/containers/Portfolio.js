@@ -6,6 +6,8 @@ import StockChart from '../components/StockChart'
 import Loading from '../components/Loading'
 
 
+// do a ternary for classname
+
 
 class Portfolio extends Component {
 
@@ -31,7 +33,7 @@ class Portfolio extends Component {
           {<StockChart stockName={userStock.stockInformation.name}symbol={userStock.stockInformation.symbol}/>}
           <h4 className="description">Shares: {userStock.shares}</h4>
           <h4 className="description">Initial Cost: ${userStock.initial_cost}</h4>
-          <h4 className="description">Total Gain/Loss: {((this.props.currentPrice - userStock.initial_cost) * userStock.shares).toFixed(2)}</h4>
+          {/* <h4 style={{color: {total gain > 0 ? green : red}}} className="description">Total Gain/Loss: {((this.props.currentPrice - userStock.initial_cost) * userStock.shares).toFixed(2)}</h4> */}
           </Modal.Content>
           </Modal>
         </div>)
@@ -39,13 +41,16 @@ class Portfolio extends Component {
   return (
     <div >
       <h1>Portfolio</h1>
-      <div className="ui cards">
+      <div className="ui three column doubling stackable grid container">
+
+      <div className="ui centered cards">
       {this.props.loading?<div className="ui segment centered">
         <div className="ui active inverted dimmer">
         <div className="ui text loader">Fetching Stocks!</div>
         <p/>
         </div>
         </div> : [portfolioStocks]}
+      </div>
       </div>
     </div>
   )

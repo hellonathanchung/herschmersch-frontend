@@ -7,10 +7,6 @@ exports.fetchNews = void 0;
 
 var _types = require("./types");
 
-var _moment = _interopRequireDefault(require("moment"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var API_KEY = process.env.REACT_APP_STOCK_API_KEY;
 
 var fetchNews = function fetchNews(symbol) {
@@ -29,8 +25,6 @@ var fetchNews = function fetchNews(symbol) {
       });
     });
   };
-}; // let date= moment().format('YYYY-MM-DD');
-// let URL = `http://newsapi.org/v2/everything?q=${symbol}&from=${date}&sortBy=publishedAt&apiKey=${API_KEY}` 
-
+};
 
 exports.fetchNews = fetchNews;

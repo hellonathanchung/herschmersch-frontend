@@ -24,7 +24,7 @@ class Ticker extends Component {
 render () {
 
   const tickerItems = this.props.tickers.map(ticker => 
-      <div className="ui raised link card" onMouseEnter={(e)=> {
+      <div className="ui raised link card centered " onMouseEnter={(e)=> {
         this.props.fetchStocks(ticker.symbol, ticker.name)
         this.props.fetchNews(ticker.symbol)}}>
         <div className="description">{ticker.name}</div>
@@ -54,7 +54,8 @@ render () {
 
   return (
     <div>
-    <h1>Tickers</h1>
+        <h1> Tickers</h1>
+
       {this.props.loading ? 
       <div>
         <div className="ui segment centered">
@@ -66,11 +67,12 @@ render () {
         </div>
         : 
         null}
-        <div className = "ui grid">
+    <div className="ui three column doubling stackable grid container centered">
         <div className="ui cards">
         {tickerItems}
         </div>
         </div>
+  
     </div>
     )
   

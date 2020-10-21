@@ -14,9 +14,11 @@ render() {
 
 return (
     <div >
-        <h1 > <Ticker/></h1>
-        <p></p>
-        <p></p>
+        <Ticker/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <Portfolio/>
     </div>
         )

@@ -1,6 +1,5 @@
 
 import {FETCH_NEWS, LOADING_NEWS} from './types'
-import moment from 'moment'
 let API_KEY = process.env.REACT_APP_STOCK_API_KEY
 
 
@@ -17,6 +16,3 @@ fetch(URL)
   })
   )
 }
-
-// let date= moment().format('YYYY-MM-DD');
-  // let URL = `http://newsapi.org/v2/everything?q=${symbol}&from=${date}&sortBy=publishedAt&apiKey=${API_KEY}` 
