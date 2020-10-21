@@ -44,6 +44,7 @@ function _default() {
       });
 
     case _types.ADD_STOCK_TO_LIST:
+      debugger;
       return _objectSpread({}, state, {
         stockList: [].concat(_toConsumableArray(state.stockList), [action.payload]),
         loading: false

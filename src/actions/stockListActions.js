@@ -20,10 +20,10 @@ export const addStockToList = (event, stockListData) => dispatch =>  {
     },
     body: JSON.stringify(stockListInformation)
   }).then((res) => res.json())
-    .then(post =>
+    .then(stockData =>
     dispatch({
     type: ADD_STOCK_TO_LIST,
-    payload: stockListInformation})
+    payload: stockData})
 )
   }
 

@@ -29,10 +29,10 @@ var addStockToList = function addStockToList(event, stockListData) {
       body: JSON.stringify(stockListInformation)
     }).then(function (res) {
       return res.json();
-    }).then(function (post) {
+    }).then(function (stockData) {
       return dispatch({
         type: _types.ADD_STOCK_TO_LIST,
-        payload: stockListInformation
+        payload: stockData
       });
     });
   };

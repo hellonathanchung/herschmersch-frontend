@@ -21,6 +21,7 @@ export default function(state = initialState, action) {
         loading:false
       }
     case ADD_STOCK_TO_LIST:
+      debugger
       return {
         ...state,
         stockList: [...state.stockList, action.payload],
