@@ -27,8 +27,8 @@ state = {
     
     const postItems = this.props.posts.map(post => 
       <div className="ui raised very padded text container segment" key={post.id}>
-        <h2 className="ui header">{post.title}</h2>
-        <h4> Post by: {post.user.username}</h4>
+        <h2 >{post.title}</h2>
+        <h4 >  Post by: {post.user.username}</h4>
         <p/>
         <p/>
         

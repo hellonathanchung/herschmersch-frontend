@@ -11,6 +11,7 @@ import Portfolio from './containers/Portfolio'
 import UserProfile from './containers/UserProfile'
 
 //components
+import Loading from './components/Loading'
 import SignupForm from './components/SignupForm'
 import StockContainer from './containers/StockContainer'
 import Header from "./components/Header";
@@ -37,6 +38,7 @@ class App extends React.Component {
       .then(response => response.json()
       .then(json => this.handleAuthResponse(json)))
     }
+    this.props.history.push("/login");
 
   }
 
@@ -95,36 +97,35 @@ render() {
   console.log(this.state)
   return (
     <div className="App">
-      
     <Header handleLogout={this.handleLogout} />
+      <Route 
+      path="/login"
+      render={(routerProps) => {
+        return <Login {...routerProps} handleLoginSubmit={this.handleLoginSubmit} handleLoginChange={this.props.handleLoginChange} />;
+          }}
+          /> 
     <Switch>
       <Route 
       path="/profile"
       render={(routerProps) => {
-            return <UserProfile {...routerProps} />;
-          }}
-        /> 
-      <Route 
-      path="/login"
-      render={(routerProps) => {
-            return <Login {...routerProps} handleLoginSubmit={this.handleLoginSubmit} handleLoginChange={this.props.handleLoginChange} />;
-          }}
-        /> 
+        return <UserProfile {...routerProps} />;
+      }}
+      /> 
       <Route
       path="/signup" 
       render={(...routerProps) => {
-      return <SignupForm handleSignUpSubmit={this.handleSignUpSubmit} />;
-        }}
+        return <SignupForm handleSignUpSubmit={this.handleSignUpSubmit} />;
+      }}
       />
       <Route path="/posts/new" render={(routerProps) => {
-            return <PostForm {...routerProps} token={this.state.token} user={this.state.user}/>;
-          }}
-        /> 
+        return <PostForm {...routerProps} token={this.state.token} user={this.state.user}/>;
+      }}
+      /> 
 
       <Route path="/posts/" render={(routerProps) => {
-            return <PostContainer {...routerProps} />;
-          }}
-        /> 
+        return <PostContainer {...routerProps} />;
+      }}
+      /> 
       <Route path="/stocks" component={StockContainer}/> 
       <Route path="/portfolio" component={Portfolio}/>
     </Switch>

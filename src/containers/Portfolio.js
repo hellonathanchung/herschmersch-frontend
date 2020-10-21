@@ -41,6 +41,7 @@ class Portfolio extends Component {
   return (
     <div >
       <h1>Portfolio</h1>
+      <br/>
       <div className="ui three column doubling stackable grid container">
 
       <div className="ui centered cards">
