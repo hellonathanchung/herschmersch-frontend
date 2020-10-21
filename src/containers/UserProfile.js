@@ -8,8 +8,6 @@ class UserProfile extends Component {
 
   
   render() {
-
-    
     console.log(this.props.stockList)
     const stockCount = this.props.stockList.stockList.length
 

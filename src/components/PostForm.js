@@ -72,9 +72,9 @@ class PostForm extends React.Component{
         <div className="ui form">
           <div className="field">
           <label>Title</label>
-          <input name="title" type="text" placeholder={this.state.title} />
+          <input name="title" type="text" value={this.state.title} placeholder={this.state.title} />
           <label>Content</label >
-          <textarea  placeholder={this.state.content} name="content"/>
+          <textarea  placeholder={this.state.content} value={this.state.content} name="content"/>
     <br/>
     <Button className="ui-button">{buttonTitle}</Button>
     </div>

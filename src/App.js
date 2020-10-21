@@ -11,7 +11,6 @@ import Portfolio from './containers/Portfolio'
 import UserProfile from './containers/UserProfile'
 
 //components
-import Loading from './components/Loading'
 import SignupForm from './components/SignupForm'
 import StockContainer from './containers/StockContainer'
 import Header from "./components/Header";
@@ -87,9 +86,10 @@ handleAuthResponse = (response) => {
 }
 
 handleLogout = () => {
+  debugger
   
-  localStorage.clear();
   this.props.history.push("/login");
+  localStorage.clear();
 
 }
 
