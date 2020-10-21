@@ -1,17 +1,17 @@
-import {ADD_STOCK_TO_LIST, REMOVE_STOCK_FROM_LIST} from './types'
+import {ADD_STOCK_TO_LIST, REMOVE_STOCK_FROM_LIST, LOADING_STOCK_LIST} from './types'
 
 
-export const addStockToList = (e,name, symbol) => dispatch =>  {
-  console.log('dispatch to list')
-  console.log(name, symbol)
-  debugger
+export const addStockToList = (event, stockListData) => dispatch =>  {
+  console.log(stockListData)
 
   let stockListInformation = {
-    name: name,
-    symbol: symbol,
+    name: stockListData.name,
+    symbol: stockListData.symbol,
     list_id: 17,
-    initial_cost: 40
+    initialCost: stockListData.initialCost,
+    shares: stockListData.shares
   }
+  dispatch({type: LOADING_STOCK_LIST})
   fetch('http://localhost:3000/api/v1/list_stocks', {
     method: 'POST',
     headers: {
@@ -28,15 +28,15 @@ export const addStockToList = (e,name, symbol) => dispatch =>  {
   }
 
 export const removeStockFromList = (e, stockId) => dispatch =>  {
-
+  dispatch({type: LOADING_STOCK_LIST})
   fetch(`http://localhost:3000/api/v1/list_stocks/${stockId}`, {
     method: 'DELETE',
     headers: {
       'content-type':'application/json',
       'Authorization': `Bearer ${localStorage.token}`
     },
- }).then((res) => res.json())
- .then(data =>
+}).then((res) => res.json())
+.then(data =>
   dispatch({
     type: REMOVE_STOCK_FROM_LIST,
     payload: stockId 

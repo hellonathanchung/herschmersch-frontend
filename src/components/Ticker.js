@@ -29,63 +29,42 @@ render () {
         this.props.fetchNews(ticker.symbol)}}>
         <div className="description">{ticker.name}</div>
         <div div  className="description">{ticker.symbol}</div>
-      <Button secondary onClick={(e)=> {
+      {/* <Button secondary onClick={(e)=> {
         this.props.addStockToList(e, ticker.name, ticker.symbol);
-        }} className="ui button"> Add Stock </Button>
+        }} className="ui button"> Add Stock </Button> */}
       <Modal primary 
-        trigger={<Button red>View More </Button>}
+        trigger={<Button red>View More</Button>}
         header={ticker.name}
         >
-        <StockChart symbol={ticker.symbol}/>
-        <Modal.Content image scrolling>
-          <News name={ticker.name} symbol={ticker.symbol} />
-        </Modal.Content>
+        <StockChart name={ticker.name} symbol={ticker.symbol}/>
         <Modal.Actions>
-          <Modal trigger={<Button primary> Add Stock </Button>} >
+          <Modal centered trigger={<Button primary> Add Stock </Button>} >
             <Modal.Content>
             <AddStockListForm/>
 
             </Modal.Content>
           </Modal>
         </Modal.Actions>
+        <Modal.Content image scrolling>
+          <News name={ticker.name} symbol={ticker.symbol} />
+        </Modal.Content>
       </ Modal>
     </div>
   )
 
-  // const tickerItems = this.props.tickers.map(ticker => 
-  //     <div className="ui raised link card" onMouseEnter={(e)=> {
-  //       this.props.fetchStocks(ticker.symbol)
-  //       this.props.fetchNews(ticker.symbol)}}>
-  //       <div className="description">{ticker.name}</div>
-  //       <div div  className="description">{ticker.symbol}</div>
-  //     <Button secondary onClick={(e)=> {
-  //       this.props.addStockToList(e, ticker.name, ticker.symbol);
-  //       }} className="ui button"> Add Stock </Button>
-  //     <Modal 
-  //       trigger={<Button red>View More </Button>}
-  //       header={ticker.name}
-  //       >
-  //       <StockChart symbol={ticker.symbol}/>
-  //       <Modal.Content image scrolling>
-  //         <News name={ticker.name} symbol={ticker.symbol} />
-  //       </Modal.Content>
-  //       <Modal.Actions>
-  //         <Button > Add Stock</Button>
-  //       </Modal.Actions>
-  //     </ Modal>
-  //   </div>
-  // )
 
   return (
     <div>
     <h1>Tickers</h1>
       {this.props.loading ? 
+      <div>
         <div className="ui segment centered">
         <div className="ui active inverted dimmer">
         <div className="ui text loader">Fetching Stocks!</div>
         <p/>
         </div>
         </div>
+              </div>
         : 
         null}
         <div className="ui cards">

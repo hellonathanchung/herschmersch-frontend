@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Modal } from 'semantic-ui-react';
 import { fetchNews } from "../actions/newsActions";
+import {Button} from 'semantic-ui-react'
 
 
 class News extends Component {
@@ -33,7 +34,9 @@ this.props.fetchNews(this.props.symbol)
       </div>
         <div className="column">
           <h1>{article.source_name}</h1>
-          {article.text} 
+          <h3>Sentiment: {article.sentiment} </h3>
+          <h4>{article.text} </h4>
+          <Button onClick={(e) => (window.location = article.news_url)} >View More Information</Button>
         </div>
       </div>
       <div>

@@ -15,9 +15,11 @@ var fetchStocks = function fetchStocks(newSymbol, stockName) {
     var stockChartY = [];
     var revStockChartX = stockChartX.reverse();
     var revStockChartY = stockChartY.reverse();
-    var currentCost = 0;
     var stockTicker = newSymbol;
     var URL = "http://api.marketstack.com/v1/eod?access_key=".concat(API_KEY, "&symbols=").concat(stockTicker);
+    dispatch({
+      type: _types.LOADING_STOCKS
+    });
     fetch(URL).then(function (res) {
       return res.json();
     }).then(function (stockData) {

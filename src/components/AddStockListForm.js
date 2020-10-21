@@ -8,7 +8,8 @@ class AddStockListForm extends React.Component{
 
   
   state = {
-    cost: "",
+    initialCost: 0,
+    shares: 0
   };
 
   componentDidMount () {
@@ -21,33 +22,35 @@ class AddStockListForm extends React.Component{
 
   handleListStockSubmit = (event) => { 
     event.preventDefault();
-
-    const newPostData = {
-      name: this.props.name,
+    
+    const newStockListData = {
+      name: this.props.stockName,
+      symbol: this.props.stockSymbol,
       initialCost:this.state.initialCost,
-      user: this.props.user,
-      user_id: this.props.user_id
+      shares:this.state.shares
     }
-      // this.props.addStockToList(event, ticker.name, ticker.symbol);
-      this.props.history.push('/posts')
+      this.props.addStockToList(event, newStockListData, this.props.stockName, this.props.stockSymbol);
+      this.props.history.push('/stocks')
 }
   render () {
 
     return (
       <div>
-
-        <h1>Hello</h1>
       <h2>Add a Stock</h2>
+      <h2> {`Current Price: $ ${this.props.currentPrice}`}</h2>
+
       <div className="ui one column stackable center aligned page grid">
       <form className="column twelve wide"
       onChange={(e) => this.handleFormChange(e)}
-      onSubmit={(e) => this.handlePostSubmit(e)}
+      onSubmit={(e) => this.handleListStockSubmit(e)}
       >
         <div className="ui form">
           <div className="field">
           <h1><label>{this.props.stockName}</label></h1>
           <label> Stock Price</label >
-          <input  placeholder={this.state.content} name="initialPrice"/>
+          <input type="number" step="0.01" placeholder={`$${this.props.currentPrice}`} name="initialCost"/>
+          <label> Shares </label >
+          <input type="number" placeholder={this.state.content} name="shares"/>
     <br/>
     <Button className="ui-button">Submit</Button>
     </div>
@@ -63,7 +66,9 @@ class AddStockListForm extends React.Component{
 const mapStateToProps = (state) => {
   return {
     stockName : state.stocks.stockName,
-    stockSymbol: state.stocks.stockSymbol
+    stockSymbol: state.stocks.stockSymbol,
+    currentPrice: state.stocks.currentPrice
+
   }
 }
 export default connect( mapStateToProps, {addStockToList})(withRouter(AddStockListForm))
