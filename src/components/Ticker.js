@@ -67,7 +67,6 @@ render () {
         : 
         null}
         <div className = "ui grid">
-
         <div className="ui cards">
         {tickerItems}
         </div>

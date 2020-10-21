@@ -30,7 +30,7 @@ this.props.fetchNews(this.props.symbol)
           <h1>{article.source_name}</h1>
           <h3>Sentiment: {article.sentiment} </h3>
           <h4>{article.text} </h4>
-          <Button onClick={(e) => (window.location = article.news_url)} >View More Information</Button>
+          <Button centered onClick={(e) => (window.open(article.news_url, '_blank'))} >View More Information</Button>
         </div>
       </div>
       <div>
