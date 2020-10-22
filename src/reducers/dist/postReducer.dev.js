@@ -55,7 +55,7 @@ function _default() {
         return postItem.id !== parseInt(action.payload.id);
       })), [action.payload]);
       return _objectSpread({}, state, {
-        postItems: updatedPostItems
+        postItems: updatedPostItems.reverse()
       });
 
     default:

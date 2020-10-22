@@ -28,7 +28,7 @@ export default function(state = initialState, action) {
         let updatedPostItems = [...state.postItems.filter(postItem => postItem.id !== parseInt(action.payload.id)), action.payload]
       return {
         ...state,
-        postItems: updatedPostItems
+        postItems: updatedPostItems.reverse()
       }
     default: 
       return state;
