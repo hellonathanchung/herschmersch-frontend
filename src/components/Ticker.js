@@ -20,7 +20,10 @@ class Ticker extends Component {
     }
     }
 
-    
+    pushToStocks() {
+      this.props.history.push("/stocks");
+
+    }
 
 render () {
 

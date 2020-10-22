@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { createPost, updatePost } from '../actions/postActions'
 import {withRouter} from 'react-router-dom'
 import { Button, Dropdown } from 'semantic-ui-react'
+import PostStockDropdown from './PostStockDropdown'
 
 
 
@@ -36,9 +37,15 @@ class PostForm extends React.Component{
     })
   }
 
+  handleStockChange = (value, key)=> {
+    console.log({[key]:value})
+    debugger
+    // debugger
+  }
+
   handlePostSubmit = (event) => { 
     event.preventDefault();
-    debugger
+    
 
     if (this.state.editMode) {
       const {id, title, content} = this.props.postData 
@@ -82,9 +89,9 @@ class PostForm extends React.Component{
           <input name="title" type="text" value={this.state.title} placeholder={this.state.title} />
           <label>Content</label >
           <textarea  placeholder={this.state.content} value={this.state.content} name="content"/>
+          
           <Dropdown
-          onChange={(e) => this.handleStockChange(e)}
-
+          onChange={(e, {value}) => this.handleStockChange(value)}
           name="stocks"
           clearable
           fluid
