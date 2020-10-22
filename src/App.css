@@ -7,8 +7,13 @@
     color: white;
     font-size: 80px;
     font-weight: bold;
+    background-image: url("/src/animated-line-chart.svg");
+
 }
 
+.background-image {
+    background-image: url("/images/animated-line-chart.svg")
+}
 .header-image-cropper {
     width: 200px;
     height: 200px;
@@ -179,7 +184,7 @@
 .card {
     cursor: pointer;
     /* changes pointer for clickable objects */
-    text-align: center;
+    /* text-align: center; */
     border-radius: 10px;
     border-radius: 15px;
     background: #eeeeee;
@@ -427,16 +432,6 @@ label {
     padding: 12px;
     cursor: pointer;
 }
-
-
-/* 
-.btn:hover {
-  background-color: white;
-}
-.submit-button .btn:hover {
-  background: #5497da;
-  color: white;
-} */
 
 .signup-link:link,
 .signup-link:visited {

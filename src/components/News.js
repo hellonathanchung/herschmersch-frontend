@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Modal } from 'semantic-ui-react';
 import { fetchNews } from "../actions/newsActions";
-import {Button} from 'semantic-ui-react'
+import {Button, Placeholder} from 'semantic-ui-react'
 
 
 class News extends Component {
@@ -48,7 +48,8 @@ this.props.fetchNews(this.props.symbol)
       <div>
       <h1>News</h1>
       <div className="scrolling content">
-      {articles}
+      {this.props.loading ? 
+      <Placeholder active inline='centered'/> : articles}
       </div>
       </div>
     )

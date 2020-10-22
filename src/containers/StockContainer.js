@@ -3,6 +3,8 @@ import Ticker from '../components/Ticker'
 import { connect } from 'react-redux'
 // import {fetchStocks} from '../actions/stockActions'
 import AddStockListForm from '../components/AddStockListForm'
+import { Segment } from 'semantic-ui-react'
+
 import Portfolio from '../containers/Portfolio'
 
 
@@ -17,6 +19,7 @@ return (
         <Ticker/>
         <br/>
         <br/>
+        <Segment/>
         <br/>
         <br/>
         <Portfolio/>

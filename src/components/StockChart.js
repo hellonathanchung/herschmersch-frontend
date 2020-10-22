@@ -3,6 +3,7 @@ import ReactFrappeChart from "react-frappe-charts";
 import {fetchStocks} from '../actions/stockActions'
 import moment from 'moment'
 import { connect } from 'react-redux'
+import { Loader } from 'semantic-ui-react'
 
 
 class StockChart extends Component {
@@ -21,6 +22,8 @@ class StockChart extends Component {
     let currentPrice= this.props.currentPrice
 
     return (
+
+      this.props.loading ?<Loader active inline='centered' /> :
       <div>
       <h1>{companyName}</h1>
       <h1>{company}</h1>
@@ -46,7 +49,8 @@ const mapStateToProps = (state) => {
     stockYValues: state.stocks.stockYValues.reverse(),
     stockName: state.stocks.stockName,
     stockSymbol: state.stocks.stockSymbol,
-    currentPrice: state.stocks.currentPrice
+    currentPrice: state.stocks.currentPrice,
+    loading: state.stocks.loading
   }
   }
 
