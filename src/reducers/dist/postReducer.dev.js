@@ -40,7 +40,7 @@ function _default() {
 
     case _types.NEW_POST:
       return _objectSpread({}, state, {
-        postItems: [].concat(_toConsumableArray(state.postItems), [action.payload])
+        postItems: [].concat(_toConsumableArray(state.postItems), [action.payload.reverse()])
       });
 
     case _types.DELETE_POST:

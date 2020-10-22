@@ -55,7 +55,7 @@ class PostForm extends React.Component{
       content:this.state.content,
       user: this.props.user,
       user_id: this.props.user_id,
-      stocks: this.state.stocks
+      stock_ids: this.state.stockIds
     }
     
       this.state.editMode ?
@@ -70,7 +70,7 @@ class PostForm extends React.Component{
     const buttonTitle = editMode ? 'Edit a Post' : 'Create a Post';
     const postTitle = editMode ? 'Update' : 'Create';
     const mapStocks = this.props.stockList.map(stock => 
-    ({ key:stock.stockInformation.symbol, value: stock.id, text: stock.stockInformation.name }))
+    ({ key:stock.stockInformation.symbol, value: stock.stockInformation.id, text: stock.stockInformation.name }))
 
     
     return (
