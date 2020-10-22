@@ -20,8 +20,9 @@ class UserProfile extends Component {
       <div >
           <h1 > User Page </h1>
         Username: {userInfo}
-       UserPosts: 
+      <br/>
        Posts you made: {userPostCount}
+       <br/>
 
        <p>Total Stocks you own: {stockCount}</p>
       </div>

@@ -41,7 +41,7 @@ state = {
         </div>
           
           )}</div>: null}
-     
+
         
         <Modal
       trigger={<Button red> Edit Post </Button>}
