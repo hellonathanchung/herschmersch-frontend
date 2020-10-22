@@ -35,10 +35,6 @@ class PostForm extends React.Component{
       editMode: !editMode
     })
   }
-  handleStockChange= (e, value) => {{
-    debugger
-    console.log(e)
-  }}
 
   handlePostSubmit = (event) => { 
     event.preventDefault();
@@ -66,7 +62,7 @@ class PostForm extends React.Component{
     const buttonTitle = editMode ? 'Edit a Post' : 'Create a Post';
     const postTitle = editMode ? 'Update' : 'Create';
     const mapStocks = this.props.stockList.map(stock => 
-    ({ key:stock.id, value: stock.id, text: stock.stockInformation.name }))
+    ({ key:stock.stockInformation.symbol, value: stock.id, text: stock.stockInformation.name }))
 
     
     return (
