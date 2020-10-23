@@ -63,23 +63,26 @@ render() {
           Don't have an account?
         </Link>
           </div>
+          <b>
+          Created by
+          {" "}
+          <img
+            alt="cool-cry-icon"
+            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/230/chart-with-upwards-trend_1f4c8.png"
+            width="5%"
+          />{" "}
+          Nathan
+        </b>
           </Form>
           
     <div>
       <br></br>
     </div>
+    
     <div>
  
       <p>
-        <b>
-          Created by
-          <img
-            alt="cool-cry-icon"
-            src="https://pbs.twimg.com/media/EF-36wfWwAEtTNY.jpg"
-            width="5%"
-          />{" "}
-          Nathan
-        </b>
+        
       </p>
       </div>
     </div>
