@@ -8,12 +8,7 @@ class UserProfile extends Component {
     console.log(this.props.stockList)
     const stockCount = this.props.stockList.stockList.length
     const userPostCount = this.props.user.userPosts.length
-
-
     const userInfo = this.props.user.username
-
-      
-  
 
   return (
 
@@ -25,6 +20,7 @@ class UserProfile extends Component {
        <br/>
 
        <p>Total Stocks you own: {stockCount}</p>
+
       </div>
           )
       }

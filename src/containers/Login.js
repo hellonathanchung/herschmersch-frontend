@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
+
 
 // import {connect} from 'react-redux'
 
@@ -22,11 +24,11 @@ render() {
   let userCrendentials=this.state
   return (
     
-    <div className="ui one column stackable center aligned page grid" >
-    <div className="column twelve wide">
+      <div className="service-container" >
+      <div className="ui one column stackable center aligned page grid" >
 
     <Form className = "ui form" onSubmit = {(event) => this.props.handleLoginSubmit(event, userCrendentials)}>
-      <h2>Please log in below:</h2>
+      <h2>Please log in</h2>
       <div className="field">
         <label name="username">Username</label>
         <input 
@@ -34,7 +36,7 @@ render() {
           type="text"
           name="username"
           value={this.state.username}
-          placeholder="username"
+          placeholder="Username"
         ></input>
         </div>
         <div className="field">
@@ -48,19 +50,29 @@ render() {
           value={this.state.password}
 
         ></input>
+        
       </div>
 
 
       <br></br>
-      <button className="ui-button">Submit</button>
-    </Form>
+      <div className="submit-button">
+            <input type="submit" value="Submit" className="btn" />
+            <br/>
+            <p></p>
+            <Link exact to="/signup" className="signup-link">
+          Don't have an account?
+        </Link>
+          </div>
+          </Form>
+          
     <div>
       <br></br>
     </div>
     <div>
+ 
       <p>
         <b>
-          Created with{" "}
+          Created by
           <img
             alt="cool-cry-icon"
             src="https://pbs.twimg.com/media/EF-36wfWwAEtTNY.jpg"

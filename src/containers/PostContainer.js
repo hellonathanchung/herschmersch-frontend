@@ -28,7 +28,7 @@ state = {
   
   render () {
 
-    
+  
     const postItems = this.props.posts.map(post => 
       <div className="ui raised very padded text container segment" key={post.id}>
         <h2 >{post.title}</h2>
@@ -74,8 +74,15 @@ state = {
       <div>
         <br/>
         {this.state.clicked === false?
-        <Button onClick={(e) => this.handlePostClick(e) }> Add a post </Button>:(
-        <PostForm handlePostClick={this.handlePostClick} />)}
+
+      (<Button onClick={(e) => this.handlePostClick(e) }> Add a post </Button>):
+      (
+      <>
+      <PostForm handlePostClick={this.handlePostClick} />
+      <p/>
+      <Button onClick={(e) => this.handlePostClick(e) }> Cancel </Button>      </>
+        )
+      }
       {postItems} 
     </div>
   )

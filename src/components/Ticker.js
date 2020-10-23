@@ -58,6 +58,7 @@ render () {
   return (
     <div>
         <h1> Tickers</h1>
+        <br/>
 
       {this.props.loading ? 
       <Loader active inline='centered' />

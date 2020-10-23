@@ -1,4 +1,6 @@
 import React from "react";
+import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+
 import { Link } from "react-router-dom";
 
 class Signup extends React.Component {
@@ -25,11 +27,14 @@ class Signup extends React.Component {
     return (
       
       <div className="service-container" >
-        
-        <form className="ui form"
+            <div className="ui one column stackable center aligned page grid" >
+
+        <Form className="ui form"
           onChange={(e) => this.handleOnChange(e)}
           onSubmit={(e) => this.props.handleSignUpSubmit(e, newUser)}
         >
+  <h2>Signup</h2>
+
           <div>
             <div className="field" >
               <input
@@ -55,14 +60,14 @@ class Signup extends React.Component {
           <div className="submit-button">
             <input type="submit" value="Submit" className="btn" />
           </div>
-        </form>
         <Link exact to="/login" className="signup-link">
           Already have an account?
         </Link>
+        </Form>
         <div>
           <p>
             <b>
-              Created with{" "}
+              Created by{" "}
               <img
                 alt="cool-cry-icon"
                 src="https://pbs.twimg.com/media/EF-36wfWwAEtTNY.jpg"
@@ -72,6 +77,7 @@ class Signup extends React.Component {
             </b>
           </p>
         </div>
+      </div>
       </div>
     );
   }
