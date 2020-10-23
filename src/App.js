@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import 'fomantic-ui-css/semantic.css';
 import api from './services/api'
-import { login } from './actions/loginActions.js'
+import { login, logout } from './actions/loginActions.js'
 import { connect } from 'react-redux'
 
 // containers
@@ -86,8 +86,9 @@ handleAuthResponse = (response) => {
 }
 
 handleLogout = () => {
-  this.props.history.push("/login");
   localStorage.clear();
+  localStorage.removeItem("token");
+  this.props.logout()
 
 }
 
@@ -131,6 +132,9 @@ render() {
 }
 }
 
-const mapDispatchToProps = (dispatch) => {return {login:(userCredentials) => dispatch(login(userCredentials))}}
+const mapDispatchToProps = (dispatch) => {
+  return {login:(userCredentials) => dispatch(login(userCredentials)),
+logout:() => dispatch(logout())}
+}
 
 export default connect (null, mapDispatchToProps) ( withRouter(App))
