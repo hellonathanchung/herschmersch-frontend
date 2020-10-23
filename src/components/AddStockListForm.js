@@ -13,6 +13,7 @@ class AddStockListForm extends React.Component{
   };
 
   componentDidMount () {
+    this.setState({initialCost:this.props.currentPrice})
   
     }
 
@@ -37,7 +38,7 @@ class AddStockListForm extends React.Component{
     return (
       <div>
         <h2>Add a Stock</h2>
-        <h2> {`Current Price: $ ${this.props.currentPrice}`}</h2>
+        <h2> {`Current Price: $ ${this.props.currentPrice.toFixed(2)}`}</h2>
         <div div className="ui one column stackable center aligned page grid">
         <form className="column twelve wide"
         onChange={(e) => this.handleFormChange(e)}
@@ -47,7 +48,7 @@ class AddStockListForm extends React.Component{
           <div className="field">
           <h1><label>{this.props.stockName}</label></h1>
           <label> Stock Price</label >
-          <input type="number" step="0.01" placeholder={`$${this.props.currentPrice}`} name="initialCost"/>
+          <input type="number" step="0.01" value={this.state.initialCost} placeholder={`$${this.props.currentPrice.toFixed(2)}`} name="initialCost"/>
           <label> Shares </label >
           <input type="number" placeholder={this.state.content} name="shares"/>
     <br/>
