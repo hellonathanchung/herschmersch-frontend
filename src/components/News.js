@@ -28,7 +28,7 @@ this.props.fetchNews(this.props.symbol)
       </div>
         <div className="column">
           <h1>{article.source_name}</h1>
-          <h3>Sentiment: {article.sentiment} </h3>
+          <h3 style={{color: article.sentiment === "Positive"? "green" : article.sentiment === "Negative" ? "red":"black"}}>Sentiment: {article.sentiment} </h3>
           <h4>{article.text} </h4>
           <Button centered onClick={(e) => (window.open(article.news_url, '_blank'))} >View More Information</Button>
         </div>

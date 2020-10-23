@@ -20,10 +20,7 @@ class Ticker extends Component {
     }
     }
 
-    pushToStocks() {
-      this.props.history.push("/stocks");
-
-    }
+ 
 
 render () {
 
@@ -33,7 +30,7 @@ render () {
       //   // this.props.fetchStocks(ticker.symbol, ticker.name)
       //   this.props.fetchNews(ticker.symbol)}}
         >
-        <div className="description">{ticker.name}</div>
+        <h1 className="description">{ticker.name}</h1>
         <div className="description">{ticker.symbol}</div>
       <Modal primary 
         trigger={<Button primary >View More</Button>}

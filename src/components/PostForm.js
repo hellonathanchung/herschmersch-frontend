@@ -14,6 +14,7 @@ class PostForm extends React.Component{
   state = {
     title: "",
     content: "",
+    stockIds: [],
     editMode: false
   };
 
@@ -39,8 +40,7 @@ class PostForm extends React.Component{
 
   handleStockChange = (value, key)=> {
     console.log({[key]:value})
-    debugger
-    // debugger
+    this.setState({stockIds:value})
   }
 
   handlePostSubmit = (event) => { 
@@ -54,7 +54,8 @@ class PostForm extends React.Component{
       title: this.state.title,
       content:this.state.content,
       user: this.props.user,
-      user_id: this.props.user_id
+      user_id: this.props.user_id,
+      stock_ids: this.state.stockIds
     }
     
       this.state.editMode ?
@@ -69,12 +70,10 @@ class PostForm extends React.Component{
     const buttonTitle = editMode ? 'Edit a Post' : 'Create a Post';
     const postTitle = editMode ? 'Update' : 'Create';
     const mapStocks = this.props.stockList.map(stock => 
-    ({ key:stock.stockInformation.symbol, value: stock.id, text: stock.stockInformation.name }))
+    ({ key:stock.stockInformation.symbol, value: stock.stockInformation.id, text: stock.stockInformation.name }))
 
     
     return (
-
-
 
       <div>
       <h2>{postTitle} a Post</h2>

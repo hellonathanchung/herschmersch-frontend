@@ -13,7 +13,6 @@ export const fetchPosts = () => dispatch => {
     )
 }
 export const createPost = (postData, token) => dispatch => {
-
   console.log('adding a post...')
   fetch('http://localhost:3000/api/v1/posts', {
     method: 'POST',
@@ -23,10 +22,19 @@ export const createPost = (postData, token) => dispatch => {
     },
     body: JSON.stringify(postData)
   }).then((res) => res.json())
-  .then(post =>
-    dispatch({
-    type: NEW_POST,
-    payload: post})
+  .then(post => {
+    if (!post.error) {
+
+      dispatch({
+        type: NEW_POST,
+        payload: post})
+      }
+      else
+      {
+        alert(post.error);
+        return (post.error)
+      }
+    }
   )
 console.log("Post has been created")
 }

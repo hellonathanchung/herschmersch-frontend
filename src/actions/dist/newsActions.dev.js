@@ -11,7 +11,6 @@ var API_KEY = process.env.REACT_APP_STOCK_API_KEY;
 
 var fetchNews = function fetchNews(symbol) {
   return function (dispatch) {
-    console.log(API_KEY);
     dispatch({
       type: _types.LOADING_NEWS
     });
