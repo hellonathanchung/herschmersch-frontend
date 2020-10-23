@@ -7,19 +7,20 @@
     color: white;
     font-size: 80px;
     font-weight: bold;
-    background-image: url("/src/animated-line-chart.svg");
-
+    ;
 }
 
-.background-image {
-    background-image: url("/images/animated-line-chart.svg")
-}
+.background-image {}
+
 .header-image-cropper {
-    width: 200px;
-    height: 200px;
+    width: 50%;
+    height: 300px;
+    margin-left: 31%;
+    margin-right: auto;
     /* position: relative; */
     overflow: hidden;
-    border-radius: 50%;
+    /* border-radius: 50%; */
+    /* background-image: url(./images/Logos-01.png); */
 }
 
 .header-pic {
@@ -37,7 +38,7 @@
     overflow: hidden;
     border-radius: 10px;
     overflow: hidden;
-    margin: 20px 20px;
+    /* margin: 20px 20px; */
 }
 
 .navbar-list a {

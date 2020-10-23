@@ -86,15 +86,12 @@ handleAuthResponse = (response) => {
 }
 
 handleLogout = () => {
-  debugger
-  
   this.props.history.push("/login");
   localStorage.clear();
 
 }
 
 render() {
-  console.log(this.state)
   return (
     <div className="App">
     <Header handleLogout={this.handleLogout} />
