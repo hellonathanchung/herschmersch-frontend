@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
         postItems: [...state.postItems.filter(postItem => postItem.id !== parseInt(action.payload))]
       }
       case UPDATE_POST:
-        let updatedPostItems = [...state.postItems.filter(postItem => postItem.id !== parseInt(action.payload.id)), action.payload]
+        let updatedPostItems = [...state.postItems.filter(postItem => postItem.id !== parseInt(action.payload.id)).reverse(), action.payload]
       return {
         ...state,
         postItems: updatedPostItems.reverse()

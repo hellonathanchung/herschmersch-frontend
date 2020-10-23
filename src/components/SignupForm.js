@@ -63,18 +63,19 @@ class Signup extends React.Component {
         <Link exact to="/login" className="signup-link">
           Already have an account?
         </Link>
-        </Form>
-        <div>
-          <p>
             <b>
+              <br/>
               Created by{" "}
               <img
                 alt="cool-cry-icon"
-                src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/230/chart-with-upwards-trend_1f4c8.png"
+                src="https://i.pinimg.com/236x/ae/0f/e3/ae0fe396a3593501baa3483600cc9027--emojis-raising.jpg"
                 width="5%"
               />{" "}
               by Nathan
             </b>
+        </Form>
+        <div>
+          <p>
           </p>
         </div>
       </div>

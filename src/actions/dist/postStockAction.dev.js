@@ -9,7 +9,6 @@ var _types = require("./types");
 
 var addPostStock = function addPostStock(event, stocks) {
   return function (dispatch) {
-    console.log(stockListData);
     fetch('http://localhost:3000/api/v1/list_stocks', {
       method: 'POST',
       headers: {

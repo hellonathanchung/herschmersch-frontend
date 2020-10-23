@@ -1,8 +1,6 @@
 import {ADD_POST_STOCK, REMOVE_POST_STOCK} from './types'
 
 export const addPostStock = (event, stocks) => dispatch =>  {
-  console.log(stockListData)
-
 
   fetch('http://localhost:3000/api/v1/list_stocks', {
     method: 'POST',
