@@ -72,6 +72,7 @@ state = {
     
     return(
       <div>
+        <h1>Posts</h1>
         <br/>
         {this.state.clicked === false?
 

@@ -68,7 +68,7 @@ render() {
           {" "}
           <img
             alt="cool-cry-icon"
-            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/facebook/230/chart-with-upwards-trend_1f4c8.png"
+            src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/htc/37/chart-with-upwards-trend_1f4c8.png"
             width="5%"
           />{" "}
           Nathan
