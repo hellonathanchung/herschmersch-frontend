@@ -36,10 +36,15 @@ var createPost = function createPost(postData, token) {
     }).then(function (res) {
       return res.json();
     }).then(function (post) {
-      return dispatch({
-        type: _types.NEW_POST,
-        payload: post
-      });
+      if (!post.error) {
+        dispatch({
+          type: _types.NEW_POST,
+          payload: post
+        });
+      } else {
+        alert(post.error);
+        return post.error;
+      }
     });
     console.log("Post has been created");
   };

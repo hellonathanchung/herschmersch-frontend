@@ -17,7 +17,7 @@ export default function(state = initialState, action) {
       case NEW_POST:
       return {
         ...state,
-        postItems: [...state.postItems, action.payload.reverse()],
+        postItems: [...state.postItems, action.payload],
       }
       case DELETE_POST:
       return {

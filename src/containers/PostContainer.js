@@ -55,21 +55,24 @@ state = {
         </div>
           
           )}</div>: null}
+          {post.user.username === this.props.user.username ?
+          <div>
 
-        
         <Modal
-      trigger={<Button red> Edit Post </Button>}
-      content= {<PostForm 
-        handlePostClick={this.handleEditClick}
-        postData={post}  />}
-    /> 
-    
-    <Button onClick={(e) => this.props.deletePost(e, post.id)}>Delete Post </Button>
+          trigger={<Button red> Edit Post </Button>}
+          content= {<PostForm 
+            handlePostClick={this.handleEditClick}
+            postData={post}  />}
+            /> 
+        <Button onClick={(e) => this.props.deletePost(e, post.id)}>Delete Post </Button>
+            </div>
+        : null }
       </div>)
 
     
     return(
       <div>
+        <br/>
         {this.state.clicked === false?
         <Button onClick={(e) => this.handlePostClick(e) }> Add a post </Button>:(
         <PostForm handlePostClick={this.handlePostClick} />)}
@@ -80,7 +83,8 @@ state = {
 }
 
 const mapStateToProps = (state) => {
-return {posts: state.posts.postItems}
+return {posts: state.posts.postItems,
+user: state.user}
 }
 
 

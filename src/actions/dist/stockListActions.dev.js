@@ -30,10 +30,15 @@ var addStockToList = function addStockToList(event, stockListData) {
     }).then(function (res) {
       return res.json();
     }).then(function (stockData) {
-      return dispatch({
-        type: _types.ADD_STOCK_TO_LIST,
-        payload: stockData
-      });
+      if (!stockData.error) {
+        dispatch({
+          type: _types.ADD_STOCK_TO_LIST,
+          payload: stockData
+        });
+      } else {
+        alert(stockData.error);
+        return stockData.error;
+      }
     });
   };
 };
