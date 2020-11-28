@@ -7,10 +7,13 @@ exports.deletePost = exports.updatePost = exports.createPost = exports.fetchPost
 
 var _types = require("./types");
 
+var url = "https://herschmerch-api.herokuapp.com/api/v1/";
+
 var fetchPosts = function fetchPosts() {
   return function (dispatch) {
     console.log('fetching...');
-    fetch('http://localhost:3000/api/v1/posts').then(function (res) {
+    console.log(url);
+    fetch("".concat(url, "/posts")).then(function (res) {
       return res.json();
     }).then(function (posts) {
       return dispatch({
@@ -26,7 +29,7 @@ exports.fetchPosts = fetchPosts;
 var createPost = function createPost(postData, token) {
   return function (dispatch) {
     console.log('adding a post...');
-    fetch('http://localhost:3000/api/v1/posts', {
+    fetch("".concat(url, "posts"), {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -55,7 +58,7 @@ exports.createPost = createPost;
 var updatePost = function updatePost(event, postId, postData, token) {
   return function (dispatch) {
     console.log('updating a post...');
-    fetch("http://localhost:3000/api/v1/posts/".concat(postId), {
+    fetch("".concat(url).concat(postId), {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -78,7 +81,7 @@ exports.updatePost = updatePost;
 
 var deletePost = function deletePost(e, postId) {
   return function (dispatch) {
-    fetch("http://localhost:3000/api/v1/posts/".concat(postId), {
+    fetch("".concat(url).concat(postId), {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',

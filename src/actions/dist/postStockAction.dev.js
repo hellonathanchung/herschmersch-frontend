@@ -9,8 +9,8 @@ var _types = require("./types");
 
 var addPostStock = function addPostStock(event, stocks) {
   return function (dispatch) {
-    console.log(stockListData);
-    fetch('http://localhost:3000/api/v1/list_stocks', {
+    var url = "https://herschmerch-api.herokuapp.com/api/v1/";
+    fetch("".concat(url, "list_stocks"), {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

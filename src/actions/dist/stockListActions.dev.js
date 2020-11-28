@@ -7,20 +7,22 @@ exports.removeStockFromList = exports.addStockToList = void 0;
 
 var _types = require("./types");
 
+var API_ROOT = "https://herschmerch-api.herokuapp.com/api/v1/";
+
 var addStockToList = function addStockToList(event, stockListData) {
   return function (dispatch) {
     console.log(stockListData);
     var stockListInformation = {
       name: stockListData.name,
       symbol: stockListData.symbol,
-      list_id: 17,
+      list_id: 1,
       initialCost: stockListData.initialCost,
       shares: stockListData.shares
     };
     dispatch({
       type: _types.LOADING_STOCK_LIST
     });
-    fetch('http://localhost:3000/api/v1/list_stocks', {
+    fetch("".concat(API_ROOT, "list_stocks"), {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -50,7 +52,7 @@ var removeStockFromList = function removeStockFromList(e, stockId) {
     dispatch({
       type: _types.LOADING_STOCK_LIST
     });
-    fetch("http://localhost:3000/api/v1/list_stocks/".concat(stockId), {
+    fetch("".concat(API_ROOT, "list_stocks/").concat(stockId), {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',

@@ -53,7 +53,7 @@ function _default() {
     case _types.UPDATE_POST:
       var updatedPostItems = [].concat(_toConsumableArray(state.postItems.filter(function (postItem) {
         return postItem.id !== parseInt(action.payload.id);
-      })), [action.payload]);
+      }).reverse()), [action.payload]);
       return _objectSpread({}, state, {
         postItems: updatedPostItems.reverse()
       });

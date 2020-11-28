@@ -1,9 +1,11 @@
 import {FETCH_POSTS, NEW_POST, DELETE_POST, UPDATE_POST} from './types'
 
+let url = "https://herschmerch-api.herokuapp.com/api/v1/"
 export const fetchPosts = () => dispatch => {
   console.log('fetching...')
+  console.log(url)
   
-    fetch('http://localhost:3000/api/v1/posts')
+    fetch(`${url}/posts`)
     .then(res => res.json())
     .then(posts => 
       dispatch({
@@ -14,7 +16,7 @@ export const fetchPosts = () => dispatch => {
 }
 export const createPost = (postData, token) => dispatch => {
   console.log('adding a post...')
-  fetch('http://localhost:3000/api/v1/posts', {
+  fetch(`${url}posts`, {
     method: 'POST',
     headers: {
       'content-type':'application/json',
@@ -41,7 +43,7 @@ console.log("Post has been created")
 export const updatePost = (event, postId, postData, token) => dispatch => {
 
   console.log('updating a post...')
-  fetch(`http://localhost:3000/api/v1/posts/${postId}`, {
+  fetch(`${url}${postId}`, {
     method: 'PATCH',
     headers: {
       'content-type':'application/json',
@@ -59,7 +61,7 @@ console.log("Post has been created")
 
 export const deletePost = (e, postId) => dispatch =>  {
 
-  fetch(`http://localhost:3000/api/v1/posts/${postId}`, {
+  fetch(`${url}${postId}`, {
     method: 'DELETE',
     headers: {
       'content-type':'application/json',

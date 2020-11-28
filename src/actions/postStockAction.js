@@ -1,10 +1,9 @@
 import {ADD_POST_STOCK, REMOVE_POST_STOCK} from './types'
 
 export const addPostStock = (event, stocks) => dispatch =>  {
-  console.log(stockListData)
+  let url = "https://herschmerch-api.herokuapp.com/api/v1/"
 
-
-  fetch('http://localhost:3000/api/v1/list_stocks', {
+  fetch(`${url}list_stocks`, {
     method: 'POST',
     headers: {
       'content-type':'application/json',

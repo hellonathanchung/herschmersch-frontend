@@ -1,5 +1,6 @@
 import {ADD_STOCK_TO_LIST, REMOVE_STOCK_FROM_LIST, LOADING_STOCK_LIST} from './types'
 
+const API_ROOT = `https://herschmerch-api.herokuapp.com/api/v1/`;
 
 export const addStockToList = (event, stockListData) => dispatch =>  {
   console.log(stockListData)
@@ -7,12 +8,12 @@ export const addStockToList = (event, stockListData) => dispatch =>  {
   let stockListInformation = {
     name: stockListData.name,
     symbol: stockListData.symbol,
-    list_id: 17,
+    list_id: 1,
     initialCost: stockListData.initialCost,
     shares: stockListData.shares
   }
   dispatch({type: LOADING_STOCK_LIST})
-  fetch('http://localhost:3000/api/v1/list_stocks', {
+  fetch(`${API_ROOT}list_stocks`, {
     method: 'POST',
     headers: {
       'content-type':'application/json',
@@ -37,7 +38,7 @@ export const addStockToList = (event, stockListData) => dispatch =>  {
 
 export const removeStockFromList = (e, stockId) => dispatch =>  {
   dispatch({type: LOADING_STOCK_LIST})
-  fetch(`http://localhost:3000/api/v1/list_stocks/${stockId}`, {
+  fetch(`${API_ROOT}list_stocks/${stockId}`, {
     method: 'DELETE',
     headers: {
       'content-type':'application/json',
