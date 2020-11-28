@@ -2,13 +2,6 @@ import React from 'react';
 import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
-
-// import {connect} from 'react-redux'
-
-//handle forms with state
-
-//onSubmit implement action 
-
 class Login extends React.Component {
 
   state = {
