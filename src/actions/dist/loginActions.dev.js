@@ -7,7 +7,7 @@ exports.logout = exports.login = void 0;
 
 var _types = require("./types");
 
-var API_ROOT = "http://localhost:3000/api/v1/";
+var API_ROOT = "https://herschmerch-api.herokuapp.com/api/v1/";
 var headers = {
   "Content-Type": "application/json",
   Accept: "application/json",

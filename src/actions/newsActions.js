@@ -13,5 +13,5 @@ export const fetchNews = (symbol) => dispatch => {
       type: FETCH_NEWS,
       payload: newsArticles.data
     })
-    )
+    ) 
   }

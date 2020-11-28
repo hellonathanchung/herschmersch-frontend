@@ -29,7 +29,7 @@ class App extends React.Component {
   componentDidMount() {
     
     if(localStorage.token){
-      fetch('http://localhost:3000/api/v1/persist',{
+      fetch('https://herschmerch-api.herokuapp.com/api/v1/persist',{
         headers:{
           "Authorization": `Bearer ${localStorage.token}`
         }
