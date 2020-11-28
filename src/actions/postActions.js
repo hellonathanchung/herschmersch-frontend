@@ -2,8 +2,7 @@ import {FETCH_POSTS, NEW_POST, DELETE_POST, UPDATE_POST} from './types'
 
 let url = "https://herschmerch-api.herokuapp.com/api/v1/"
 export const fetchPosts = () => dispatch => {
-  console.log('fetching...')
-  console.log(url)
+
   
     fetch(`${url}/posts`)
     .then(res => res.json())

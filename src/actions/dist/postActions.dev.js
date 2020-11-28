@@ -11,8 +11,6 @@ var url = "https://herschmerch-api.herokuapp.com/api/v1/";
 
 var fetchPosts = function fetchPosts() {
   return function (dispatch) {
-    console.log('fetching...');
-    console.log(url);
     fetch("".concat(url, "/posts")).then(function (res) {
       return res.json();
     }).then(function (posts) {

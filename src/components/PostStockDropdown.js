@@ -15,7 +15,7 @@ class PostStockDropDown extends React.Component {
 
         <select class="ui fluid search dropdown" multiple="">
           {mapStocks}
-       </select>
+      </select>
         </div>
 
 

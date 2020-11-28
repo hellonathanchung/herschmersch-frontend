@@ -16,9 +16,6 @@ const Navbar = (props) => {
         </div>
       ) : (
         <div className="navbar-list">
-        {/* <Link to="/profile" className="navbar-list">
-          Hello {props.user.username}
-        </Link>{" "} */}
         <Link to="/stocks" className="navbar-list">
           Stocks
         </Link>{" "}
