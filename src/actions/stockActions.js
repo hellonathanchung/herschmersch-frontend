@@ -8,7 +8,7 @@ export const fetchStocks = (newSymbol, stockName) => dispatch =>  {
   let revStockChartY = stockChartY.reverse()
   let stockTicker = newSymbol
   
-  let URL = `http://api.marketstack.com/v1/eod?access_key=${API_KEY}&symbols=${stockTicker}`
+  let URL = `https://api.marketstack.com/v1/eod?access_key=${API_KEY}&symbols=${stockTicker}`
   dispatch({type: LOADING_STOCKS})
   fetch(URL)
   .then(res => res.json())
