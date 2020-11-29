@@ -25,4 +25,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # Local Netlify folder
-.netlify
+.netlifynode_modules
