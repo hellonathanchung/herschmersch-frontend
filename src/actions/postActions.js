@@ -4,7 +4,7 @@ let url = "https://herschmerch-api.herokuapp.com/api/v1/"
 export const fetchPosts = () => dispatch => {
 
   
-    fetch(`${url}/posts`)
+    fetch(`${url}posts`)
     .then(res => res.json())
     .then(posts => 
       dispatch({
@@ -42,6 +42,9 @@ console.log("Post has been created")
 export const updatePost = (event, postId, postData, token) => dispatch => {
 
   console.log('updating a post...')
+
+debugger
+  console.log(`${url}posts/${postId}`)
   fetch(`${url}${postId}`, {
     method: 'PATCH',
     headers: {
@@ -60,7 +63,7 @@ console.log("Post has been created")
 
 export const deletePost = (e, postId) => dispatch =>  {
 
-  fetch(`${url}${postId}`, {
+  fetch(`${url}posts/${postId}`, {
     method: 'DELETE',
     headers: {
       'content-type':'application/json',

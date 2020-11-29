@@ -11,7 +11,7 @@ var url = "https://herschmerch-api.herokuapp.com/api/v1/";
 
 var fetchPosts = function fetchPosts() {
   return function (dispatch) {
-    fetch("".concat(url, "/posts")).then(function (res) {
+    fetch("".concat(url, "posts")).then(function (res) {
       return res.json();
     }).then(function (posts) {
       return dispatch({
@@ -56,6 +56,8 @@ exports.createPost = createPost;
 var updatePost = function updatePost(event, postId, postData, token) {
   return function (dispatch) {
     console.log('updating a post...');
+    debugger;
+    console.log("".concat(url, "posts/").concat(postId));
     fetch("".concat(url).concat(postId), {
       method: 'PATCH',
       headers: {
@@ -79,7 +81,7 @@ exports.updatePost = updatePost;
 
 var deletePost = function deletePost(e, postId) {
   return function (dispatch) {
-    fetch("".concat(url).concat(postId), {
+    fetch("".concat(url, "posts/").concat(postId), {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
