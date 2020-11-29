@@ -8,8 +8,6 @@
         "@testing-library/user-event": "^7.1.2",
         "core-js": "^3.8.0",
         "d3": "^6.2.0",
-        "fomantic-ui": "^2.8.7",
-        "fomantic-ui-css": "^2.8.7",
         "frappe-charts": "^1.5.2",
         "kaktana-react-lightweight-charts": "^1.1.3",
         "lightweight-charts": "^3.1.5",

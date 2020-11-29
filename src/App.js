@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import 'fomantic-ui-css/semantic.css';
 import api from './services/api'
 import { login, logout } from './actions/loginActions.js'
 import { connect } from 'react-redux'
