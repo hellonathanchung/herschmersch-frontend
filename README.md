@@ -11,7 +11,7 @@ HerschMersch is a stock market tracking application allowing users to:
 
 ## Installation
 To install:
-- Clone the repository for the frontend and [backend] (https://github.com/hellonathanchung/herschmersch-backend)
+- Clone the repository for the frontend and [backend](https://github.com/hellonathanchung/herschmersch-backend)
 ### Backend
 - run `npm install` and `npm start`
 - `bundle install` in the terminal.
