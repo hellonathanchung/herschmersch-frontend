@@ -1,7 +1,8 @@
 # HerschMersch 
 
 ## Description:
-- HerschMersch is a stock market tracking application allowing users to:
+
+HerschMersch is a stock market tracking application allowing users to:
 1. Create and delete stocks within a portfolio to track stocks
 2. View market sentiment from several news articles
 3. See total gain and loss on stocks through graphs
