@@ -8,6 +8,7 @@ HerschMersch is a stock market tracking application allowing users to:
 3. See total gain and loss on stocks through graphs
 4. Create, update, and delete posts regarding stocks they own.
 
+![image](https://user-images.githubusercontent.com/65788625/121113705-784f5980-c7e0-11eb-8284-93ea94696fd3.png)
 
 ## Installation
 To install:
