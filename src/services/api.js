@@ -28,9 +28,8 @@ const getCurrentUser = () => {
   }).then((res) => res.json());
 };
 
-
 // const newPost = (newPost) => {
-  
+
 //   fetch('http://jsonplaceholder.typicode.com/posts', {
 //     method: 'POST',
 //     headers: {
@@ -42,11 +41,11 @@ const getCurrentUser = () => {
 
 export default {
   auth: {
-    login:login,
+    login: login,
     getCurrentUser: getCurrentUser,
     signup: signup,
   },
   // post:{
   //   newPost:newPost
   // }
-}
+};

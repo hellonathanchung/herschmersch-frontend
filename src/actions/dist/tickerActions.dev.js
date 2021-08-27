@@ -15,7 +15,7 @@ var fetchTickers = function fetchTickers() {
     dispatch({
       type: _types.LOADING_TICKERS
     });
-    fetch("https://api.marketstack.com/v1/tickers?access_key=".concat(API_KEY)).then(function (res) {
+    fetch("http://api.marketstack.com/v1/tickers?access_key=".concat(API_KEY)).then(function (res) {
       return res.json();
     }).then(function (tickers) {
       return dispatch({
