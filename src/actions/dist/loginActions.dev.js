@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.logout = exports.login = void 0;
 
@@ -11,7 +11,7 @@ var API_ROOT = "https://herschmerch-api.herokuapp.com/api/v1/";
 var headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
-  Authorization: "Bearers ".concat(localStorage.token)
+  Authorization: "Bearers ".concat(localStorage.token),
 };
 
 var login = function login(userCredentials) {
@@ -22,7 +22,7 @@ var login = function login(userCredentials) {
     var user_id = userCredentials.user.id;
     dispatch({
       type: _types.INITIAL_STOCK_LIST,
-      payload: userStocks
+      payload: userStocks,
     });
     dispatch({
       type: _types.LOGIN_USER,
@@ -30,8 +30,8 @@ var login = function login(userCredentials) {
         userPosts: userPosts,
         userStocks: userStocks,
         username: username,
-        user_id: user_id
-      }
+        user_id: user_id,
+      },
     });
   };
 };
@@ -42,7 +42,7 @@ var logout = function logout() {
   return function (dispatch) {
     dispatch({
       type: _types.LOGOUT_USER,
-      payload: {}
+      payload: {},
     });
   };
 };

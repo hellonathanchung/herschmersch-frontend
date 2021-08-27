@@ -1,27 +1,25 @@
-import {FETCH_NEWS, LOADING_NEWS} from '../actions/types'
+import { FETCH_NEWS, LOADING_NEWS } from "../actions/types";
 
 const initialState = {
   newsArticles: [],
-  loading: false
-}
+  loading: false,
+};
 
-export default function(state = initialState, action) {
-  
-  switch(action.type) {
+export default function (state = initialState, action) {
+  switch (action.type) {
     case LOADING_NEWS:
       return {
         ...state,
         newsArticles: [...state.newsArticles],
-        loading:true
-      }
+        loading: true,
+      };
     case FETCH_NEWS:
       return {
         ...state,
         newsArticles: action.payload,
-        loading: false
-      }
-    default: 
+        loading: false,
+      };
+    default:
       return state;
   }
 }
-

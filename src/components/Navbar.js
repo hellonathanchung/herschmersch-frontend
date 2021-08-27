@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {connect} from "react-redux"
+import { connect } from "react-redux";
 
 const Navbar = (props) => {
   return (
@@ -16,26 +16,26 @@ const Navbar = (props) => {
         </div>
       ) : (
         <div className="navbar-list">
-        <Link to="/stocks" className="navbar-list">
-          Stocks
-        </Link>{" "}
-        <Link to="/portfolio" className="navbar-list">
-          Portfolio
-        </Link>{" "}
-        <Link to="/posts/" className="navbar-list">
-          All Posts
-        </Link>{" "}
-        <Link to="/login/" className="navbar-list" onClick={props.handleLogout} >
-          Logout
-        </Link>{" "}
-      </div>
+          <Link to="/stocks" className="navbar-list">
+            Stocks
+          </Link>{" "}
+          <Link to="/portfolio" className="navbar-list">
+            Portfolio
+          </Link>{" "}
+          <Link to="/posts/" className="navbar-list">
+            All Posts
+          </Link>{" "}
+          <Link to="/login/" className="navbar-list" onClick={props.handleLogout}>
+            Logout
+          </Link>{" "}
+        </div>
       )}
     </div>
   );
 };
 
 const mapStateToProps = (state) => {
-  return {user: state.user}
-}
+  return { user: state.user };
+};
 
-export default connect(mapStateToProps) (Navbar)
+export default connect(mapStateToProps)(Navbar);
